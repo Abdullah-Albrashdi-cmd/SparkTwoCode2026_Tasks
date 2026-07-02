@@ -4,26 +4,16 @@
     {
         static void Main(string[] args)
         {
-            /*
-            //1:
-            Console.WriteLine("Enter: ");
-            object obj = Console.ReadLine();
-            Console.WriteLine("He" + obj);
 
-            Console.Write("Enter your age: ");
-            int age = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("You are " + age + " years old.");
+            //1:Task 1 - Personal Info Card
+            string name = "Ali Ahmed";
+            int age = 22;
+            double height = 1.71;
+            bool isStudent = true;
 
-            for (int i=0; i<=5; i++)
-            {
-                Console.WriteLine(i);
-            }
-            */
-            string[] fr = { "Apple", "Banana", "Cherry" };
-            foreach (string fruit in fr)
-            {
-                Console.WriteLine(fruit);
-            }
+            console.WriteLine(
+                "name: "+name+"Age: "+age+"Height: "+height+"Student: "+isStudent);
+
         }
     }
 }
