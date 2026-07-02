@@ -29,6 +29,20 @@ namespace Task1Solution
             Console.WriteLine("The Width of the rectangle is: " + width);
             Console.WriteLine("The area of the rectangle is: " + Area);
 
+
+            //3:Task 3 -  Even or Odd Checker
+            Console.WriteLine("Enter a number to check if it is even or odd: ");
+            double number = Convert.ToDouble(Console.ReadLine());
+
+            if (number % 2 == 0)
+            {
+                Console.WriteLine("The number " + number + " is even.");
+            }
+            else
+            {
+                Console.WriteLine("The number " + number + " is odd.");
+            }
+
         }
     }
 }
