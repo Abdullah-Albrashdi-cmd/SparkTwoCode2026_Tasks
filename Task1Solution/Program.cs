@@ -15,7 +15,7 @@ namespace Task1Solution
             bool isStudent = true;
 
             Console.WriteLine(
-                "name: "+name+". Age: "+age+". Height: "+height+". Student: "+isStudent);
+                "name: " + name + ". Age: " + age + ". Height: " + height + ". Student: " + isStudent);
 
 
             //2:Task 2 - Rectangle Calculator
@@ -43,7 +43,7 @@ namespace Task1Solution
             {
                 Console.WriteLine("The number " + number + " is odd.");
             }
-            
+
 
 
             //4:Task 4 -  Voting Eligibility
@@ -64,6 +64,34 @@ namespace Task1Solution
             else
             {
                 Console.WriteLine("You are not eligible to vote.");
+            }
+
+           
+            //5:Task 5 -  Grade Letter Lookup
+            Console.WriteLine("Enter your grade (A, B, C, D, F): ");
+
+            char grade = Console.ReadLine().ToUpper()[0];
+
+            switch (grade)
+            {
+                case 'A':
+                    Console.WriteLine("Excellent!");
+                    break;
+                case 'B':
+                    Console.WriteLine("Good job!");
+                    break;
+                case 'C':
+                    Console.WriteLine("Good.");
+                    break;
+                case 'D':
+                    Console.WriteLine("Pass.");
+                    break;
+                case 'F':
+                    Console.WriteLine("Fail.");
+                    break;
+                default: Console.WriteLine("Invalid grade entered.");
+                    break;
+
             }
         }
     }
