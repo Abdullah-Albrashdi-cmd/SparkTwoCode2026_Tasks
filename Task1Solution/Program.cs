@@ -16,7 +16,7 @@ namespace Task1Solution
 
             Console.WriteLine(
                 "name: " + name + ". Age: " + age + ". Height: " + height + ". Student: " + isStudent);
-
+            Console.WriteLine();
 
             //2:Task 2 - Rectangle Calculator
             Console.WriteLine("Enter the length of the rectangle: ");
@@ -29,7 +29,7 @@ namespace Task1Solution
             Console.WriteLine("The Length of the rectangle is: " + length);
             Console.WriteLine("The Width of the rectangle is: " + width);
             Console.WriteLine("The area of the rectangle is: " + Area);
-
+            Console.WriteLine();
 
             //3:Task 3 -  Even or Odd Checker
             Console.WriteLine("Enter a number to check if it is even or odd: ");
@@ -43,7 +43,7 @@ namespace Task1Solution
             {
                 Console.WriteLine("The number " + number + " is odd.");
             }
-
+            Console.WriteLine();
 
 
             //4:Task 4 -  Voting Eligibility
@@ -65,8 +65,8 @@ namespace Task1Solution
             {
                 Console.WriteLine("You are not eligible to vote.");
             }
+            Console.WriteLine();
 
-           
             //5:Task 5 -  Grade Letter Lookup
             Console.WriteLine("Enter your grade (A, B, C, D, F): ");
 
@@ -93,6 +93,37 @@ namespace Task1Solution
                     break;
 
             }
+            Console.WriteLine();
+
+
+            //6:Task 6 -   Temperature Converter
+
+            Console.WriteLine("Enter the temperature in Celsius: ");
+
+            double celsius = Convert.ToDouble(Console.ReadLine());
+
+            double fahrenheit = (celsius * 9 / 5) + 32;
+
+            String Classification = "";
+
+            if (fahrenheit < 10)
+            {
+                Classification = "Cold";
+            }
+            if (fahrenheit >= 10 && fahrenheit <= 30)
+            {
+                Classification = "Mild";
+            }
+            else if (fahrenheit > 30)
+            {
+                Classification = "Hot";
+            }
+
+            Console.WriteLine("The Temperature in Fahrenheit is: " + fahrenheit);
+            Console.WriteLine("The Weather classification is: " + Classification);
+            Console.WriteLine();
+
+
         }
     }
 }
