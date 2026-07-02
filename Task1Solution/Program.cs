@@ -1,4 +1,5 @@
-﻿using System.Formats.Asn1;
+﻿using System.ComponentModel.Design;
+using System.Formats.Asn1;
 
 namespace Task1Solution
 {
@@ -6,7 +7,7 @@ namespace Task1Solution
     {
         static void Main(string[] args)
         {
-
+            /*
             //1:Task 1 - Personal Info Card
             string name = "Ali Ahmed";
             int age = 22;
@@ -42,7 +43,28 @@ namespace Task1Solution
             {
                 Console.WriteLine("The number " + number + " is odd.");
             }
+            */
 
+
+            //4:Task 4 -  Voting Eligibility
+
+            Console.WriteLine("Enter your age to check if you are eligible to vote: ");
+            int userAge = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Do you have a valid ID? (yes/no): ");
+            string hasValidID = Console.ReadLine();
+
+            bool hasValidId = (hasValidID == "yes");
+
+
+            if (hasValidId && userAge >= 18)
+            {
+                Console.WriteLine("You are eligible to vote.");
+            }
+            else
+            {
+                Console.WriteLine("You are not eligible to vote.");
+            }
         }
     }
 }
