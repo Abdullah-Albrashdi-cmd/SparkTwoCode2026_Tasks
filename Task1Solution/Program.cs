@@ -7,7 +7,7 @@ namespace Task1Solution
     {
         static void Main(string[] args)
         {
-            /*
+            
             //1:Task 1 - Personal Info Card
             string name = "Ali Ahmed";
             int age = 22;
@@ -43,7 +43,7 @@ namespace Task1Solution
             {
                 Console.WriteLine("The number " + number + " is odd.");
             }
-            */
+            
 
 
             //4:Task 4 -  Voting Eligibility
