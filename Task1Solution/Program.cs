@@ -11,8 +11,8 @@
             double height = 1.71;
             bool isStudent = true;
 
-            console.WriteLine(
-                "name: "+name+"Age: "+age+"Height: "+height+"Student: "+isStudent);
+            Console.WriteLine(
+                "name: "+name+". Age: "+age+". Height: "+height+". Student: "+isStudent);
 
         }
     }
