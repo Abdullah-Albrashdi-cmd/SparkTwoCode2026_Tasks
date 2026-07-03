@@ -8,7 +8,7 @@ namespace Task1Solution
     {
         static void Main(string[] args)
         {
-
+            /*
             //1:Task 1 - Personal Info Card
             string name = "Ali Ahmed";
             int age = 22;
@@ -216,7 +216,43 @@ namespace Task1Solution
 
             }
             Console.WriteLine();
+
+            */
+            //10:Task 10 -   Mini Calculator
+            Console.WriteLine("Enter the first number: ");
+            int firstNumber = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter the second number: ");
+            int secondNumber = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter the operation (+, -, *, /): ");
+            char operation = Console.ReadLine()[0];
+
+                switch (operation)
+                {
+                    case '+':
+                        Console.WriteLine("The result of addition is: " + (firstNumber + secondNumber));
+                        break;
+                    case '-':
+                        Console.WriteLine("The result of subtraction is: " + (firstNumber - secondNumber));
+                        break;
+                    case '*':
+                        Console.WriteLine("The result of multiplication is: " + (firstNumber * secondNumber));
+                        break;
+                    case '/':
+                        if (secondNumber != 0)
+                        {
+                            Console.WriteLine("The result of division is: " + (firstNumber / secondNumber));
+                        }
+                        else
+                        {
+                            Console.WriteLine("Cannot divide by zero.");
+                        }
+                        break;
+                    default:
+                        Console.WriteLine("Invalid operation entered.");
+                        break;
+                }
         }
 
     }
+
 }
