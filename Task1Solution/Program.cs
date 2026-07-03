@@ -8,7 +8,7 @@ namespace Task1Solution
     {
         static void Main(string[] args)
         {
-            /*
+            
             //1:Task 1 - Personal Info Card
             string name = "Ali Ahmed";
             int age = 22;
@@ -217,7 +217,7 @@ namespace Task1Solution
             }
             Console.WriteLine();
 
-            */
+            
             //10:Task 10 -   Mini Calculator
             Console.WriteLine("Enter the first number: ");
             int firstNumber = Convert.ToInt32(Console.ReadLine());
@@ -251,6 +251,10 @@ namespace Task1Solution
                         Console.WriteLine("Invalid operation entered.");
                         break;
                 }
+            Console.WriteLine();
+
+
+
         }
 
     }
