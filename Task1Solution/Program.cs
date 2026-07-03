@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.Design;
+using System.Data.Common;
 using System.Formats.Asn1;
 
 namespace Task1Solution
@@ -7,7 +8,7 @@ namespace Task1Solution
     {
         static void Main(string[] args)
         {
-            
+
             //1:Task 1 - Personal Info Card
             string name = "Ali Ahmed";
             int age = 22;
@@ -89,7 +90,8 @@ namespace Task1Solution
                 case 'F':
                     Console.WriteLine("Fail.");
                     break;
-                default: Console.WriteLine("Invalid grade entered.");
+                default:
+                    Console.WriteLine("Invalid grade entered.");
                     break;
 
             }
@@ -124,6 +126,35 @@ namespace Task1Solution
             Console.WriteLine();
 
 
+            //7:Task 7 -   Movie Ticket Pricing
+            Console.WriteLine("Enter your age to check the movie ticket price: ");
+            int tAge = Convert.ToInt32(Console.ReadLine());
+
+            double ticketPrice = 0;
+            String category = "";
+
+            if (tAge >= 0 && tAge <= 12)
+            {
+                ticketPrice = 2.000;
+                category = "Child";
+            }
+            else if (tAge >= 13 && tAge <= 59)
+            {
+                ticketPrice = 5.000;
+                category = "Adult";
+            }
+            else if (tAge >= 60)
+            {
+                ticketPrice = 3.000;
+                category = "Senior";
+            }
+            else
+            {
+                Console.WriteLine("Invalid age entered.");
+            }
+            Console.WriteLine("The movie ticket price for " + category + " is: " + ticketPrice + " OMR");
+            Console.WriteLine();
         }
+
     }
 }
