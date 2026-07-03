@@ -8,7 +8,7 @@ namespace Task1Solution
     {
         static void Main(string[] args)
         {
-            /*
+            
             //1:Task 1 - Personal Info Card
             string name = "Ali Ahmed";
             int age = 22;
@@ -413,7 +413,7 @@ namespace Task1Solution
             }
 
 
-            */
+            
             //15:Task 15 -     University Admission Decision
             Console.WriteLine("Enter the program type ('S' for Science, 'A' for Arts): ");
             char programType = Console.ReadLine().ToUpper()[0];
