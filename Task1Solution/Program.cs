@@ -8,7 +8,7 @@ namespace Task1Solution
     {
         static void Main(string[] args)
         {
-            /*
+            
             //1:Task 1 - Personal Info Card
             string name = "Ali Ahmed";
             int age = 22;
@@ -50,7 +50,7 @@ namespace Task1Solution
             //4:Task 4 -  Voting Eligibility
 
             Console.WriteLine("Enter your age to check if you are eligible to vote: ");
-            int userAge = Convert.ToInt32(Console.ReadLine());
+            int userAge1 = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("Do you have a valid ID? (yes/no): ");
             string hasValidID = Console.ReadLine();
@@ -58,7 +58,7 @@ namespace Task1Solution
             bool hasValidId = (hasValidID == "yes");
 
 
-            if (hasValidId && userAge >= 18)
+            if (hasValidId && userAge1 >= 18)
             {
                 Console.WriteLine("You are eligible to vote.");
             }
@@ -253,7 +253,7 @@ namespace Task1Solution
                 }
             Console.WriteLine();
 
-            */
+            
             //11:Task 11 -   Loan Eligibility System
 
             Console.WriteLine("Enter your Age: ");
@@ -283,6 +283,50 @@ namespace Task1Solution
                 }
             }
             Console.WriteLine();
+
+            
+
+            //12:Task 12 -    Shipping Cost Calculator
+            Console.WriteLine("Enter a region code ('A' for local, 'B' for national, 'C' for international): ");
+            char regionCode = Console.ReadLine().ToUpper()[0];
+            Console.WriteLine("Enter the weight of the package in kg: ");
+            double packageWeight = Convert.ToDouble(Console.ReadLine());
+
+            double baseCost = 0;
+            double extraCost = 0;
+            switch (regionCode)
+            {
+                case 'A':
+                    baseCost = 1.000;
+                    break;
+                case 'B':
+                    baseCost = 3.000;
+                    break;
+                case 'C':
+                    baseCost = 7.000;
+                    break;
+                default:
+                    Console.WriteLine("Invalid region code entered.");
+                    break;
+            }
+
+            if (regionCode == 'A' || regionCode == 'B' || regionCode == 'C')
+            {
+                if (packageWeight > 5)
+                {
+                    extraCost = 2.000;
+                }
+                else if (packageWeight > 10)
+                {
+                    extraCost = 5.000;
+                }
+
+
+
+                Console.WriteLine("The shipping base cost is: " + baseCost + " OMR");
+                Console.WriteLine("The extra cost for the package weight is: " + extraCost + " OMR");
+                Console.WriteLine("The total shipping cost is: " + baseCost + " OMR");
+            }
 
         }
 
