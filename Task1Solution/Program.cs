@@ -8,7 +8,7 @@ namespace Task1Solution
     {
         static void Main(string[] args)
         {
-
+            
             //1:Task 1 - Personal Info Card
             string name = "Ali Ahmed";
             int age = 22;
@@ -153,6 +153,33 @@ namespace Task1Solution
                 Console.WriteLine("Invalid age entered.");
             }
             Console.WriteLine("The movie ticket price for " + category + " is: " + ticketPrice + " OMR");
+            Console.WriteLine();
+
+            
+            //8:Task 8 -    Restaurant Bill with Membership Discount
+            Console.WriteLine("Enter the total bill amount: ");
+            double billAmount = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Are you a member? (yes/no): ");
+            string isMemberInput = Console.ReadLine().ToLower();
+            bool isMember = (isMemberInput == "yes");
+            String discount = "";
+            double finalAmount = 0;
+
+            if (billAmount > 20 && isMember)
+            {
+                discount = "15%";
+                finalAmount = billAmount - billAmount * 0.15;
+
+            }
+            else
+            {
+                discount = "no discount";
+                finalAmount = billAmount;
+            }
+            Console.WriteLine();
+            Console.WriteLine("The original bill amount is: " + billAmount + " OMR");
+            Console.WriteLine("The discount applied is: " + discount);
+            Console.WriteLine("The final bill amount is: " + finalAmount + " OMR");
             Console.WriteLine();
         }
 
