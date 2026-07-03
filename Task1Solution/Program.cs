@@ -270,18 +270,19 @@ namespace Task1Solution
             }
             else if (userAge <21 || userAge>60)
             {
-                Console.WriteLine("Age out of range.");
+                Console.WriteLine("User are not eligible 'age out of range'.");
             }
             else if (monthlyIncome < 400)
             {
-                Console.WriteLine("Income too low.");
+                Console.WriteLine("User are not eligible 'Income too low.'");
             }
             else
             {
                 if (haveExLone) {
-                    Console.WriteLine("User has an existing loan.");
+                    Console.WriteLine("User are not eligible 'User has an existing loan.'");
                 }
             }
+            Console.WriteLine();
 
         }
 
