@@ -8,7 +8,7 @@ namespace Task1Solution
     {
         static void Main(string[] args)
         {
-            
+            /*
             //1:Task 1 - Personal Info Card
             string name = "Ali Ahmed";
             int age = 22;
@@ -356,6 +356,74 @@ namespace Task1Solution
             {
                 Console.WriteLine("The given sides do not form a valid triangle.");
             }
+
+            */
+            //14:Task 14 -     Online Store Checkout
+            Console.WriteLine("Enter a prodect code (1,2, or 3): ");
+            int pCode = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter the quantity you went to buy: ");
+            int quanNum = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Did you have discount coupon (yes/no): ");
+            String hasDisCoup = Console.ReadLine().ToLower();
+            bool hasCoup = (hasDisCoup == "yes");
+
+            double price = 0;
+            String pName = "";
+            bool validCode = true;
+
+            switch (pCode)
+            {
+                case 1:
+                    pName = "HeadPhones";
+                    price = 8.500;
+                    break;
+
+                case 2:
+                    pName = "Keyboard";
+                    price = 12.000;
+                    break;
+                case 3:
+                    pName = "Mouse";
+                    price = 5.000;
+                    break;
+                default:
+                    Console.WriteLine("Invalid product code entered.");
+                    validCode = false;
+                    break;
+            }
+            if (validCode)
+            {
+                double subtotal = price * quanNum;
+                double discountAmount = 0;
+                double taxAmount = 0;
+
+                if (hasCoup && subtotal > 20)
+                {
+                    discountAmount = subtotal * 0.10;
+                    subtotal -= discountAmount;
+                }
+
+                taxAmount = subtotal * 0.05;
+                double total = subtotal - discountAmount + taxAmount;
+
+                Console.WriteLine("The subtotal is: " + subtotal);
+                Console.WriteLine("The discount amount is: " + discountAmount);
+                Console.WriteLine("The tax amount is: " + taxAmount);
+                Console.WriteLine("The total amount to be paid is: " + total);
+            }
+
+
+
+
+
+
+
+            //15:Task 15 -     University Admission Decision
+
+
+
+
+
         }
 
     }
