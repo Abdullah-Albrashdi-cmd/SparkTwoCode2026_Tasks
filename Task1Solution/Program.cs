@@ -8,7 +8,7 @@ namespace Task1Solution
     {
         static void Main(string[] args)
         {
-            
+            /*
             //1:Task 1 - Personal Info Card
             string name = "Ali Ahmed";
             int age = 22;
@@ -409,20 +409,57 @@ namespace Task1Solution
                 Console.WriteLine("The discount amount is: " + discountAmount);
                 Console.WriteLine("The tax amount is: " + taxAmount);
                 Console.WriteLine("The total amount to be paid is: " + total);
+                Console.WriteLine();
             }
 
 
-
-
-
-
-
+            */
             //15:Task 15 -     University Admission Decision
+            Console.WriteLine("Enter the program type ('S' for Science, 'A' for Arts): ");
+            char programType = Console.ReadLine().ToUpper()[0];
+            Console.WriteLine("Enter your applicany's GPA (out of 4.0): ");
+            double gpa = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Enter your exam score (out of 100): ");
+            double examScore = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Did you have an extracurricular achievement (yes/no): ");
+            String hasExtra = Console.ReadLine().ToLower();
 
 
+            switch (programType)
+            {
+                case 'S':
+                    if (gpa >= 3.0 && examScore >= 75)
+                    {
+                        Console.WriteLine("Admitted.");
+                    }
+                    else if (gpa >= 3.0 && examScore >= 75 && hasExtra == "yes")
+                    {
+                        Console.WriteLine("Conditionally Admitted.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Not Admitted.");
+                    }
+                    break;
 
-
-
+                case 'A':
+                    if (gpa >= 2.5 && examScore >= 60)
+                    {
+                        Console.WriteLine("Admitted.");
+                    }
+                    else if (gpa >= 2.5 && examScore >= 60 && hasExtra == "yes")
+                    {
+                        Console.WriteLine("Conditionally Admitted.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Not Admitted.");
+                    }
+                    break;
+                default:
+                    Console.WriteLine("Invalid program type entered.");
+                    break;
+            }
         }
 
     }
