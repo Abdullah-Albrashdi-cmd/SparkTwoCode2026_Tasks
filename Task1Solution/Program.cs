@@ -8,7 +8,7 @@ namespace Task1Solution
     {
         static void Main(string[] args)
         {
-            
+            /*
             //1:Task 1 - Personal Info Card
             string name = "Ali Ahmed";
             int age = 22;
@@ -253,7 +253,35 @@ namespace Task1Solution
                 }
             Console.WriteLine();
 
+            */
+            //11:Task 11 -   Loan Eligibility System
 
+            Console.WriteLine("Enter your Age: ");
+            int userAge = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter Your monthly income: ");
+            double monthlyIncome = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Did you have an existing loan (yes/no): ");
+            String haveLone = Console.ReadLine().ToLower();
+            bool haveExLone = (haveLone == "yes");
+
+            if (userAge>=21 && userAge<=60 && monthlyIncome>=400 && !haveExLone)
+            {
+                Console.WriteLine("User are eligible.");
+            }
+            else if (userAge <21 || userAge>60)
+            {
+                Console.WriteLine("Age out of range.");
+            }
+            else if (monthlyIncome < 400)
+            {
+                Console.WriteLine("Income too low.");
+            }
+            else
+            {
+                if (haveExLone) {
+                    Console.WriteLine("User has an existing loan.");
+                }
+            }
 
         }
 
