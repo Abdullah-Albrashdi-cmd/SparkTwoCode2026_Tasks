@@ -8,7 +8,7 @@ namespace Task1Solution
     {
         static void Main(string[] args)
         {
-            /*
+            
             //1:Task 1 - Personal Info Card
             string name = "Ali Ahmed";
             int age = 22;
@@ -357,7 +357,6 @@ namespace Task1Solution
                 Console.WriteLine("The given sides do not form a valid triangle.");
             }
 
-            */
             //14:Task 14 -     Online Store Checkout
             Console.WriteLine("Enter a prodect code (1,2, or 3): ");
             int pCode = Convert.ToInt32(Console.ReadLine());
