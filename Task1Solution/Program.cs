@@ -8,7 +8,7 @@ namespace Task1Solution
     {
         static void Main(string[] args)
         {
-            
+
             //1:Task 1 - Personal Info Card
             string name = "Ali Ahmed";
             int age = 22;
@@ -155,7 +155,7 @@ namespace Task1Solution
             Console.WriteLine("The movie ticket price for " + category + " is: " + ticketPrice + " OMR");
             Console.WriteLine();
 
-            
+
             //8:Task 8 -    Restaurant Bill with Membership Discount
             Console.WriteLine("Enter the total bill amount: ");
             double billAmount = Convert.ToDouble(Console.ReadLine());
@@ -180,6 +180,41 @@ namespace Task1Solution
             Console.WriteLine("The original bill amount is: " + billAmount + " OMR");
             Console.WriteLine("The discount applied is: " + discount);
             Console.WriteLine("The final bill amount is: " + finalAmount + " OMR");
+            Console.WriteLine();
+
+
+            //9:Task 9 -    Day Name Finder
+            Console.WriteLine("Enter a number (1-7) to find the corresponding day of the week: ");
+            int dayNumber = Convert.ToInt32(Console.ReadLine());
+
+            switch (dayNumber)
+            {
+                case 1:
+                    Console.WriteLine("The day is Sunday.");
+                    break;
+                case 2:
+                    Console.WriteLine("The day is Monday.");
+                    break;
+                case 3:
+                    Console.WriteLine("The day is Tuesday.");
+                    break;
+                case 4:
+                    Console.WriteLine("The day is Wednesday.");
+                    break;
+                case 5:
+                    Console.WriteLine("The day is Thursday.");
+                    break;
+                case 6:
+                    Console.WriteLine("The day is Friday.");
+                    break;
+                case 7:
+                    Console.WriteLine("The day is Saturday.");
+                    break;
+                default:
+                    Console.WriteLine("Invalid day number entered.");
+                    break;
+
+            }
             Console.WriteLine();
         }
 
