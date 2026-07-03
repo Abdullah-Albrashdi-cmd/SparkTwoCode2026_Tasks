@@ -327,7 +327,35 @@ namespace Task1Solution
                 Console.WriteLine("The extra cost for the package weight is: " + extraCost + " OMR");
                 Console.WriteLine("The total shipping cost is: " + baseCost + " OMR");
             }
+            
 
+            //13:Task 13 -    Triangle Type Classifier
+            Console.WriteLine("Enter the length of the First sides of the triangle: ");
+            double side1 = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Enter the length of the Second sides of the triangle: ");
+            double side2 = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Enter the length of the Third sides of the triangle: ");
+            double side3 = Convert.ToDouble(Console.ReadLine());
+
+            if (side1 + side2 > side3 && side1 + side3 > side2 && side2 + side3 > side1)
+            {
+                if (side1 == side2 && side2 == side3)
+                {
+                    Console.WriteLine("The triangle is Equilateral.");
+                }
+                else if (side1 == side2 || side1 == side3 || side2 == side3)
+                {
+                    Console.WriteLine("The triangle is Isosceles.");
+                }
+                else
+                {
+                    Console.WriteLine("The triangle is Scalene.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("The given sides do not form a valid triangle.");
+            }
         }
 
     }
