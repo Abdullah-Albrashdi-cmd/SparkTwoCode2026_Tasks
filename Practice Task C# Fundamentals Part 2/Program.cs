@@ -7,7 +7,7 @@ namespace Practice_Task_C__Fundamentals_Part_2
     {
         static void Main(string[] args)
         {
-            /*
+            
             //Task1: Countdown Timer
 
             Console.WriteLine("Enter a starting number: ");
@@ -172,7 +172,7 @@ namespace Practice_Task_C__Fundamentals_Part_2
             Console.WriteLine("The final sum of even numbers from 1 to "+n2+" is: "+total);
             Console.WriteLine();
 
-        */
+        
 
             //Task9:    Validated Positive Number Input
             int number1 = 0;
