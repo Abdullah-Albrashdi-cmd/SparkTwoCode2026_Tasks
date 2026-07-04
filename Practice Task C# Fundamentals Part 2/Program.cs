@@ -1,4 +1,5 @@
-﻿using System.Security.AccessControl;
+﻿using System.ComponentModel;
+using System.Security.AccessControl;
 
 namespace Practice_Task_C__Fundamentals_Part_2
 {
@@ -6,7 +7,7 @@ namespace Practice_Task_C__Fundamentals_Part_2
     {
         static void Main(string[] args)
         {
-            
+            /*
             //Task1: Countdown Timer
 
             Console.WriteLine("Enter a starting number: ");
@@ -44,6 +45,25 @@ namespace Practice_Task_C__Fundamentals_Part_2
                 Console.WriteLine( num+ "x" +i+ "=" +(num * i));
             }
             Console.WriteLine() ;
+
+            */
+            //Task4:   Password Retry
+            string correctPassword = "Spark2026";
+            Console.WriteLine("Enter the password: ");
+            String userInput = Console.ReadLine();
+
+            while (userInput != correctPassword)
+            {
+                Console.WriteLine("Incorrect password, try again");
+                userInput = Console.ReadLine();
+            }
+            Console.WriteLine("Access granted!");
+            Console.WriteLine();
+
+
+
+
+
 
         }
     }
