@@ -7,7 +7,7 @@ namespace Practice_Task_C__Fundamentals_Part_2
     {
         static void Main(string[] args)
         {
-            /*
+            
             //Task1: Countdown Timer
 
             Console.WriteLine("Enter a starting number: ");
@@ -210,7 +210,7 @@ namespace Practice_Task_C__Fundamentals_Part_2
             Console.WriteLine("The sum of all whole numbers from 1 to " + number1 + " is: " + sum1);
             Console.WriteLine();
 
-            */
+            
             //Task10:    Simple ATM Simulation
             int correctPin = 2244;
             double balance = 100.000;
