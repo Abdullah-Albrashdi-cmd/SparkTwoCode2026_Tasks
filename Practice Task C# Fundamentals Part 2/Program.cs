@@ -59,7 +59,7 @@ namespace Practice_Task_C__Fundamentals_Part_2
             }
             Console.WriteLine("Access granted!");
             Console.WriteLine();
-            */
+            
 
             //Task5:   Number Guessing Game
             int secretNumber = 27;
@@ -84,6 +84,34 @@ namespace Practice_Task_C__Fundamentals_Part_2
                 }
 
             } while (userGuess != secretNumber);
+            Console.WriteLine();
+            */
+
+            //task6:   Safe Division Calculator
+            try
+            {
+                Console.WriteLine("Enter the first number (numerator): ");
+                int numerator = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine("Enter the second number (denominator): ");
+                int denominator = Convert.ToInt32(Console.ReadLine());
+
+                int result = numerator / denominator;
+                Console.WriteLine("The result of the division is: " + result);
+            }
+            catch (DivideByZeroException)
+            {
+                Console.WriteLine("Error: Cannot divide by zero. Please try again with a non zero denominator.");
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Error: Please enter valid whole numbers only.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("An unexpected error occurred: " + ex.Message);
+            }
+
             Console.WriteLine();
 
 
