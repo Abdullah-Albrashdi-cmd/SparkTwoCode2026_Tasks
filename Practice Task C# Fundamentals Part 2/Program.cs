@@ -6,6 +6,7 @@ namespace Practice_Task_C__Fundamentals_Part_2
     {
         static void Main(string[] args)
         {
+            /*
             //Task1: Countdown Timer
 
             Console.WriteLine("Enter a starting number: ");
@@ -30,11 +31,19 @@ namespace Practice_Task_C__Fundamentals_Part_2
             {
                 sum = sum + i;
             }
-            Console.WriteLine($"The sum of numbers from 1 to {n} is: {sum}");
+            Console.WriteLine($"The sum of numbers from 1 to" +n +" is: "+sum);
             Console.WriteLine();
+            */
 
+            //Task3:  Multiplication Table
+            Console.WriteLine("Enter a number to generate its multiplication table: ");
+            int num = Convert.ToInt32(Console.ReadLine());
 
-
+            for (int i = 1; i <= 10; i++) 
+            {
+                Console.WriteLine( num+ "x" +i+ "=" +(num * i));
+            }
+            Console.WriteLine() ;
 
         }
     }
