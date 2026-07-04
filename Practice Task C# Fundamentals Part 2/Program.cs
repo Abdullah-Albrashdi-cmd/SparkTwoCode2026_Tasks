@@ -46,7 +46,7 @@ namespace Practice_Task_C__Fundamentals_Part_2
             }
             Console.WriteLine() ;
 
-            */
+            
             //Task4:   Password Retry
             string correctPassword = "Spark2026";
             Console.WriteLine("Enter the password: ");
@@ -58,6 +58,32 @@ namespace Practice_Task_C__Fundamentals_Part_2
                 userInput = Console.ReadLine();
             }
             Console.WriteLine("Access granted!");
+            Console.WriteLine();
+            */
+
+            //Task5:   Number Guessing Game
+            int secretNumber = 27;
+            int userGuess;
+            int counter = 0;
+            do {
+                Console.WriteLine("Guess the secret number between 1 and 50: ");
+                userGuess = Convert.ToInt32(Console.ReadLine());
+                counter++;
+
+                if (userGuess < secretNumber)
+                {
+                    Console.WriteLine("Too low.");
+                }
+                else if (userGuess > secretNumber)
+                {
+                    Console.WriteLine("Too high.");
+                }
+                else
+                {
+                    Console.WriteLine("Correct! You guessed the secret number "+secretNumber+" in "+counter+" attempts.");
+                }
+
+            } while (userGuess != secretNumber);
             Console.WriteLine();
 
 
