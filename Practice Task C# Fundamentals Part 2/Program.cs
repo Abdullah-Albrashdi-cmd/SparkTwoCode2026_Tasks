@@ -31,6 +31,10 @@ namespace Practice_Task_C__Fundamentals_Part_2
                 sum = sum + i;
             }
             Console.WriteLine($"The sum of numbers from 1 to {n} is: {sum}");
+            Console.WriteLine();
+
+
+
 
         }
     }
