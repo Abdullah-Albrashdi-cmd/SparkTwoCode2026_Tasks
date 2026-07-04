@@ -155,7 +155,7 @@ namespace Practice_Task_C__Fundamentals_Part_2
 
                 Console.WriteLine();
             }
-            */
+            
 
             //Task8:    Sum of Even Numbers Only
             Console.WriteLine("Enter a positive whole number N: ");
@@ -170,6 +170,44 @@ namespace Practice_Task_C__Fundamentals_Part_2
                 }
             }
             Console.WriteLine("The final sum of even numbers from 1 to "+n2+" is: "+total);
+            Console.WriteLine();
+
+        */
+
+            //Task9:    Validated Positive Number Input
+            int number1 = 0;
+            bool isValid = false;
+
+            do
+            {
+                try
+                {
+                    Console.WriteLine("Enter a positive whole number: ");
+                    number1 = Convert.ToInt32(Console.ReadLine());
+
+                    if (number1 <= 0)
+                    {
+                        Console.WriteLine("Error: Please enter a number greater than zero.");
+                    }
+                    else
+                    {
+                        isValid = true;
+                    }
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Error: Please enter a valid whole number.");
+                }
+
+            } while (!isValid);
+
+            int sum1 = 0;
+            for (int i = 1; i <= number1; i++)
+            {
+                sum1 += i;
+            }
+
+            Console.WriteLine("The sum of all whole numbers from 1 to " + number1 + " is: " + sum1);
             Console.WriteLine();
 
 
