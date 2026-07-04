@@ -7,7 +7,7 @@ namespace Practice_Task_C__Fundamentals_Part_2
     {
         static void Main(string[] args)
         {
-            
+            /*
             //Task1: Countdown Timer
 
             Console.WriteLine("Enter a starting number: ");
@@ -117,9 +117,9 @@ namespace Practice_Task_C__Fundamentals_Part_2
             
 
             //Task7:    Repeating Menu with Exit Option
-            bool isRunning = true;
+            bool isRunningg = true;
 
-            while (isRunning)
+            while (isRunningg)
             {
                 Console.WriteLine("----- MENU -----");
                 Console.WriteLine("1) Say Hello");
@@ -141,7 +141,7 @@ namespace Practice_Task_C__Fundamentals_Part_2
                             break;
                         case 3:
                             Console.WriteLine("Exiting the program. See You");
-                            isRunning = false;
+                            isRunningg = false;
                             break;
                         default:
                             Console.WriteLine("Invalid choice, please select 1, 2, or 3.");
@@ -210,8 +210,132 @@ namespace Practice_Task_C__Fundamentals_Part_2
             Console.WriteLine("The sum of all whole numbers from 1 to " + number1 + " is: " + sum1);
             Console.WriteLine();
 
+            */
+            //Task10:    Simple ATM Simulation
+            int correctPin = 2244;
+            double balance = 100.000;
+            int attempts = 0;
+            bool pinCorrect = false;
 
+            while (attempts < 3 && !pinCorrect)
+            {
+                try
+                {
+                    Console.WriteLine("Enter your PIN: ");
+                    int enteredPin = Convert.ToInt32(Console.ReadLine());
 
+                    if (enteredPin == correctPin)
+                    {
+                        pinCorrect = true;
+                    }
+                    else
+                    {
+                        attempts++;
+                        Console.WriteLine("Incorrect PIN. Attempts remaining: " + (3 - attempts));
+                    }
+                }
+                catch (FormatException)
+                {
+                    attempts++;
+                    Console.WriteLine("Invalid input. Attempts remaining: " + (3 - attempts));
+                }
+            }
+
+            if (!pinCorrect)
+            {
+                Console.WriteLine("Card Blocked");
+            }
+            else
+            {
+                Console.WriteLine("PIN accepted. Welcome!");
+                bool isRunning = true;
+
+                while (isRunning)
+                {
+                    Console.WriteLine("--ATM MENU--");
+                    Console.WriteLine("1) Deposit");
+                    Console.WriteLine("2) Withdraw");
+                    Console.WriteLine("3) Check Balance");
+                    Console.WriteLine("4) Exit");
+                    Console.WriteLine();
+                    Console.WriteLine("Enter your choice: ");
+                    
+                    try
+                    {
+                        int choice = Convert.ToInt32(Console.ReadLine());
+
+                        switch (choice)
+                        {
+                            case 1:
+                                try
+                                {
+                                    Console.WriteLine("Enter deposit amount: ");
+                                    double depositAmount = Convert.ToDouble(Console.ReadLine());
+
+                                    if (depositAmount <= 0)
+                                    {
+                                        Console.WriteLine("Error: Deposit amount must be positive.");
+                                    }
+                                    else
+                                    {
+                                        balance += depositAmount;
+                                        Console.WriteLine("Deposit successful. New balance: " + balance + " OMR");
+                                    }
+                                }
+                                catch (FormatException)
+                                {
+                                    Console.WriteLine("Error: Please enter a valid number.");
+                                }
+                                break;
+
+                            case 2:
+                                try
+                                {
+                                    Console.WriteLine("Enter withdrawal amount: ");
+                                    double withdrawAmount = Convert.ToDouble(Console.ReadLine());
+
+                                    if (withdrawAmount <= 0)
+                                    {
+                                        Console.WriteLine("Error: Withdrawal amount must be positive.");
+                                    }
+                                    else if (withdrawAmount > balance)
+                                    {
+                                        Console.WriteLine("Error: Insufficient balance.");
+                                    }
+                                    else
+                                    {
+                                        balance -= withdrawAmount;
+                                        Console.WriteLine("Withdrawal successful. New balance: " + balance + " OMR");
+                                    }
+                                }
+                                catch (FormatException)
+                                {
+                                    Console.WriteLine("Error: Please enter a valid number.");
+                                }
+                                break;
+
+                            case 3:
+                                Console.WriteLine("Current balance: " + balance + " OMR");
+                                break;
+
+                            case 4:
+                                Console.WriteLine("Thank you for using the ATM.");
+                                isRunning = false;
+                                break;
+
+                            default:
+                                Console.WriteLine("Invalid choice, please select 1-4.");
+                                break;
+                        }
+                    }
+                    catch (FormatException)
+                    {
+                        Console.WriteLine("Error: Please enter a valid number for the menu choice.");
+                    }
+
+                    Console.WriteLine();
+                }
+            }
 
 
 
