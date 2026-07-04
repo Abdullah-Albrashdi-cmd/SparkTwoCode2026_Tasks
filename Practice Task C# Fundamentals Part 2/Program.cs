@@ -85,7 +85,7 @@ namespace Practice_Task_C__Fundamentals_Part_2
 
             } while (userGuess != secretNumber);
             Console.WriteLine();
-            */
+            
 
             //task6:   Safe Division Calculator
             try
@@ -113,6 +113,48 @@ namespace Practice_Task_C__Fundamentals_Part_2
             }
 
             Console.WriteLine();
+
+            */
+
+            //Task7:    Repeating Menu with Exit Option
+            bool isRunning = true;
+
+            while (isRunning)
+            {
+                Console.WriteLine("----- MENU -----");
+                Console.WriteLine("1) Say Hello");
+                Console.WriteLine("2) Show Time-of-day Greeting");
+                Console.WriteLine("3) Exit");
+                Console.WriteLine("Enter your choice: ");
+
+                try
+                {
+                    int choice = Convert.ToInt32(Console.ReadLine());
+
+                    switch (choice)
+                    {
+                        case 1:
+                            Console.WriteLine("Hello!");
+                            break;
+                        case 2:
+                            Console.WriteLine("Good day, Hope you're having a great time.");
+                            break;
+                        case 3:
+                            Console.WriteLine("Exiting the program. See You");
+                            isRunning = false;
+                            break;
+                        default:
+                            Console.WriteLine("Invalid choice, please select 1, 2, or 3.");
+                            break;
+                    }
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Error: Please enter a valid number (1, 2, or 3).");
+                }
+
+                Console.WriteLine();
+            }
 
 
 
