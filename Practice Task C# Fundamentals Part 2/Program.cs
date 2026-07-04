@@ -114,7 +114,7 @@ namespace Practice_Task_C__Fundamentals_Part_2
 
             Console.WriteLine();
 
-            */
+            
 
             //Task7:    Repeating Menu with Exit Option
             bool isRunning = true;
@@ -155,6 +155,22 @@ namespace Practice_Task_C__Fundamentals_Part_2
 
                 Console.WriteLine();
             }
+            */
+
+            //Task8:    Sum of Even Numbers Only
+            Console.WriteLine("Enter a positive whole number N: ");
+            int n2 = Convert.ToInt32(Console.ReadLine());
+            int total = 0;
+
+            for (int i = 1; i <= n2; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    total += i;
+                }
+            }
+            Console.WriteLine("The final sum of even numbers from 1 to "+n2+" is: "+total);
+            Console.WriteLine();
 
 
 
