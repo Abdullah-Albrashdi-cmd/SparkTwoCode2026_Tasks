@@ -6,7 +6,7 @@ namespace SP_1_Session_3_Practice_Task
     {
         static void Main(string[] args)
         {
-            
+            /*
             //Task1:  Absolute Difference
             Console.WriteLine("Enter the first number:");
             double num1 = Convert.ToDouble(Console.ReadLine());
@@ -104,7 +104,37 @@ namespace SP_1_Session_3_Practice_Task
             {
                 Console.WriteLine("The names not match.");
             }
+            */
 
+            //Task8:   Membership Expiry Checker
+            Console.WriteLine("Enter your membership start date as text (e.g. \"2026-01-10\"): ");
+            String input = Console.ReadLine();
+            try
+            {
+                DateTime parsedDate = DateTime.Parse(input);
+
+                Console.WriteLine("Enter number of valid membership days: ");
+
+                int validDays = Convert.ToInt32(Console.ReadLine());
+
+                
+                DateTime exDate = parsedDate.AddDays(validDays);
+
+                if (exDate >= DateTime.Today)
+                {
+                    Console.WriteLine("Membership is 'Active'");
+                }
+                else
+                {
+                    Console.WriteLine("Membership is 'Expired'");
+                }
+                Console.WriteLine("Expiry date: " + exDate.ToString("yyyy-MM-dd"));
+            }
+            catch 
+            {
+                Console.WriteLine("Invalid date format. Please enter the date in the correct format (e.g. \"2026-01-10\").");
+            }
+            
 
 
         }
