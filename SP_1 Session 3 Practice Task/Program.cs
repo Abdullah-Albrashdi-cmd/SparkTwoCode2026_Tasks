@@ -13,7 +13,7 @@
             double differ = Math.Abs(num1 - num2);
             Console.WriteLine("The absolute difference between " +num1+" and "+num2+" is: "+differ);
             Console.WriteLine();
-
+            
 
 
         }
