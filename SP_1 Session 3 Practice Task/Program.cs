@@ -46,10 +46,10 @@ namespace SP_1_Session_3_Practice_Task
             Console.WriteLine("Trial end date: "+endDate.ToString("yyyy-MM-dd"));
             Console.WriteLine();
 
-            */
+            
             //Task5:   Grade Rounding System
             Console.WriteLine("Enter raw exam score as a decimal number (e.g. 74.6): ");
-            double  score = Convert.ToDouble(Console.ReadLine());
+            double score = Convert.ToDouble(Console.ReadLine());
 
             score = Math.Round(score, 0);
             Console.WriteLine("The rounded score is: " + score);
@@ -64,6 +64,31 @@ namespace SP_1_Session_3_Practice_Task
             }
             Console.WriteLine();
 
+            */
+
+            //Task6:   Password Strength Checker
+            Console.WriteLine("Enter a password: ");
+            String password = Console.ReadLine().ToLower();
+            int len = password.Length;
+            bool contains = password.Contains("password");
+            if (len > 8)
+            {
+                if (contains)
+                {
+                    Console.WriteLine("Weak password: contains 'password'.");
+                }
+                else
+                {
+                    Console.WriteLine("Strong password: dont contains 'password'.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Weak password: less than 8 characters.");
+
+
+
+            }
         }
     }
 }
