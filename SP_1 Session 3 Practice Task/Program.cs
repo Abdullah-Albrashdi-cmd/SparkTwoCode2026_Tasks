@@ -6,7 +6,7 @@ namespace SP_1_Session_3_Practice_Task
     {
         static void Main(string[] args)
         {
-            /*
+            
             //Task1:  Absolute Difference
             Console.WriteLine("Enter the first number:");
             double num1 = Convert.ToDouble(Console.ReadLine());
@@ -64,14 +64,14 @@ namespace SP_1_Session_3_Practice_Task
             }
             Console.WriteLine();
 
-            */
+            
 
             //Task6:   Password Strength Checker
             Console.WriteLine("Enter a password: ");
             String password = Console.ReadLine().ToLower();
             int len = password.Length;
             bool contains = password.Contains("password");
-            if (len > 8)
+            if (len >= 8)
             {
                 if (contains)
                 {
@@ -85,8 +85,7 @@ namespace SP_1_Session_3_Practice_Task
             else
             {
                 Console.WriteLine("Weak password: less than 8 characters.");
-
-
+                
 
             }
         }
