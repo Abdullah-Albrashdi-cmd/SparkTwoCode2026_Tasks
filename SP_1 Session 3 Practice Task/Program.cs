@@ -6,7 +6,7 @@ namespace SP_1_Session_3_Practice_Task
     {
         static void Main(string[] args)
         {
-            
+            /*
             //Task1:  Absolute Difference
             Console.WriteLine("Enter the first number:");
             double num1 = Convert.ToDouble(Console.ReadLine());
@@ -46,6 +46,22 @@ namespace SP_1_Session_3_Practice_Task
             Console.WriteLine("Trial end date: "+endDate.ToString("yyyy-MM-dd"));
             Console.WriteLine();
 
+            */
+            //Task5:   Grade Rounding System
+            Console.WriteLine("Enter raw exam score as a decimal number (e.g. 74.6): ")
+            double  score = Convert.ToDouble(Console.ReadLine());
+
+            score = Math.Round(score, 0);
+            if (score >= 60)
+            {
+                Console.WriteLine("Pass.");
+
+            }
+            else
+            {
+                Console.WriteLine("Fail.");
+            }
+            Console.WriteLine();
 
         }
     }
