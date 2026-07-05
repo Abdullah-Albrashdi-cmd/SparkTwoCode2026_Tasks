@@ -1,4 +1,5 @@
 ﻿using System.Data;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace SP_1_Session_3_Practice_Task
 {
@@ -6,7 +7,7 @@ namespace SP_1_Session_3_Practice_Task
     {
         static void Main(string[] args)
         {
-            
+            /*
             //Task1:  Absolute Difference
             Console.WriteLine("Enter the first number:");
             double num1 = Convert.ToDouble(Console.ReadLine());
@@ -199,6 +200,29 @@ namespace SP_1_Session_3_Practice_Task
 
 
             }
+            */
+
+
+            //Task12:   Birthday Insights
+            Console.WriteLine("Enter your date of birth as text (e.g. \"2000-05-14\"): ");
+            String input1 = Console.ReadLine();
+
+            DateTime birthDate = DateTime.Parse(input1);
+            DateTime today = DateTime.Today;
+
+            int age = today.Year - birthDate.Year;
+
+            if (today.Month < birthDate.Month || 
+                (today.Month == birthDate.Month && today.Day < birthDate.Day))
+            {
+                age--;
+            }
+
+            DayOfWeek weekday = birthDate.DayOfWeek;
+            Console.WriteLine("You are " + age + " years old.");
+            Console.WriteLine("You were born on a " + weekday );
+
+
         }
     }
 }
