@@ -6,7 +6,7 @@ namespace SP_1_Session_3_Practice_Task
     {
         static void Main(string[] args)
         {
-            /*
+            
             //Task1:  Absolute Difference
             Console.WriteLine("Enter the first number:");
             double num1 = Convert.ToDouble(Console.ReadLine());
@@ -145,7 +145,7 @@ namespace SP_1_Session_3_Practice_Task
             Console.WriteLine("The rounded up value of " + decimalNumber + " is: " + Math.Ceiling(decimalNumber));
             
             Console.WriteLine("The rounded down value of " + decimalNumber + " is: " + Math.Floor(decimalNumber));
-            */
+            
 
 
             //Task10:   Word Position Finder
