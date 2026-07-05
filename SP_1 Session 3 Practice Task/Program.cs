@@ -205,7 +205,8 @@ namespace SP_1_Session_3_Practice_Task
 
             //Task12:   Birthday Insights
             Console.WriteLine("Enter your date of birth as text (e.g. \"2000-05-14\"): ");
-            String input1 = Console.ReadLine();
+
+           string input1 = Console.ReadLine();
 
             DateTime birthDate = DateTime.Parse(input1);
             DateTime today = DateTime.Today;
