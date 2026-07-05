@@ -48,10 +48,11 @@ namespace SP_1_Session_3_Practice_Task
 
             */
             //Task5:   Grade Rounding System
-            Console.WriteLine("Enter raw exam score as a decimal number (e.g. 74.6): ")
+            Console.WriteLine("Enter raw exam score as a decimal number (e.g. 74.6): ");
             double  score = Convert.ToDouble(Console.ReadLine());
 
             score = Math.Round(score, 0);
+            Console.WriteLine("The rounded score is: " + score);
             if (score >= 60)
             {
                 Console.WriteLine("Pass.");
