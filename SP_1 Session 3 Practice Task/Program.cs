@@ -223,7 +223,6 @@ namespace SP_1_Session_3_Practice_Task
             Console.WriteLine("You are " + age + " years old.");
             Console.WriteLine("You were born on a " + weekday );
 
-
         }
     }
 }
