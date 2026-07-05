@@ -164,7 +164,7 @@ namespace SP_1_Session_3_Practice_Task
 
             //Task11:   One-Time Password (OTP) Generator
             Random random = new Random();
-            int randomNumber = random.Next(100000, 999999);
+            int randomNumber = random.Next(1000, 9999);
 
             Console.WriteLine("Your One Time Password (OTP) is: " + randomNumber);
 
@@ -172,15 +172,23 @@ namespace SP_1_Session_3_Practice_Task
             {
                 int attempts = 0;
 
-                do
+
+                for (int i = 0; i < 3; i++)
                 {
                     Console.WriteLine("Enter the OTP: ");
                     int enteredOTP = Convert.ToInt32(Console.ReadLine());
                     if (enteredOTP == randomNumber)
                     {
                         Console.WriteLine("Verified");
+                        return;
                     }
-                } while (attempts <= 3);
+                    else
+                    {
+                        attempts++;
+                        Console.WriteLine("Incorrect OTP. Attempts left: " + (3 - attempts)+ " Try again.");
+                    }
+                }
+                
 
                 Console.WriteLine("Verification Failed");
 
