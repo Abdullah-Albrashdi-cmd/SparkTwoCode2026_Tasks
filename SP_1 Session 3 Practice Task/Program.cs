@@ -6,7 +6,7 @@ namespace SP_1_Session_3_Practice_Task
     {
         static void Main(string[] args)
         {
-            /*
+            
             //Task1:  Absolute Difference
             Console.WriteLine("Enter the first number:");
             double num1 = Convert.ToDouble(Console.ReadLine());
@@ -159,7 +159,7 @@ namespace SP_1_Session_3_Practice_Task
 
             Console.WriteLine("The first-occurrence of the word " + word + " is: " + position);
             Console.WriteLine("The last-occurrence of the word " + word + " is: " + lastPosition);
-            */
+            
 
 
             //Task11:   One-Time Password (OTP) Generator
