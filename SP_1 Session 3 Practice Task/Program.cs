@@ -6,7 +6,7 @@ namespace SP_1_Session_3_Practice_Task
     {
         static void Main(string[] args)
         {
-            
+            /*
             //Task1:  Absolute Difference
             Console.WriteLine("Enter the first number:");
             double num1 = Convert.ToDouble(Console.ReadLine());
@@ -159,8 +159,38 @@ namespace SP_1_Session_3_Practice_Task
 
             Console.WriteLine("The first-occurrence of the word " + word + " is: " + position);
             Console.WriteLine("The last-occurrence of the word " + word + " is: " + lastPosition);
+            */
 
 
+            //Task11:   One-Time Password (OTP) Generator
+            Random random = new Random();
+            int randomNumber = random.Next(100000, 999999);
+
+            Console.WriteLine("Your One Time Password (OTP) is: " + randomNumber);
+
+            try
+            {
+                int attempts = 0;
+
+                do
+                {
+                    Console.WriteLine("Enter the OTP: ");
+                    int enteredOTP = Convert.ToInt32(Console.ReadLine());
+                    if (enteredOTP == randomNumber)
+                    {
+                        Console.WriteLine("Verified");
+                    }
+                } while (attempts <= 3);
+
+                Console.WriteLine("Verification Failed");
+
+            }
+            catch
+            {
+                Console.WriteLine("Invalid input. Please enter a valid OTP.");
+
+
+            }
         }
     }
 }
