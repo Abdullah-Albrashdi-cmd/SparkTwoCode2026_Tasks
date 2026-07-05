@@ -174,7 +174,7 @@ namespace SP_1_Session_3_Practice_Task
 
 
                 for (int i = 0; i < 3; i++)
-                {
+                { 
                     Console.WriteLine("Enter the OTP: ");
                     int enteredOTP = Convert.ToInt32(Console.ReadLine());
                     if (enteredOTP == randomNumber)
