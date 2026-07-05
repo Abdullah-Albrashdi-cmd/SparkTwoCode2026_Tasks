@@ -6,7 +6,7 @@ namespace SP_1_Session_3_Practice_Task
     {
         static void Main(string[] args)
         {
-            
+            /*
             //Task1:  Absolute Difference
             Console.WriteLine("Enter the first number:");
             double num1 = Convert.ToDouble(Console.ReadLine());
@@ -88,6 +88,25 @@ namespace SP_1_Session_3_Practice_Task
                 
 
             }
+            */
+
+            //Task7:   Clean Name Comparator
+            Console.WriteLine("Enter a name: ");
+            String name1 = Console.ReadLine().ToLower().Trim();
+            Console.WriteLine("Enter the same name again: ");
+            String name2 = Console.ReadLine().ToLower().Trim();
+
+            if (name1 == name2)
+            {
+                Console.WriteLine("The names Matchs.");
+            }
+            else
+            {
+                Console.WriteLine("The names not match.");
+            }
+
+
+
         }
     }
 }
