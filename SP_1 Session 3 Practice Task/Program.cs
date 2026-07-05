@@ -6,7 +6,7 @@ namespace SP_1_Session_3_Practice_Task
     {
         static void Main(string[] args)
         {
-            /*
+            
             //Task1:  Absolute Difference
             Console.WriteLine("Enter the first number:");
             double num1 = Convert.ToDouble(Console.ReadLine());
@@ -104,7 +104,7 @@ namespace SP_1_Session_3_Practice_Task
             {
                 Console.WriteLine("The names not match.");
             }
-            */
+            
 
             //Task8:   Membership Expiry Checker
             Console.WriteLine("Enter your membership start date as text (e.g. \"2026-01-10\"): ");
