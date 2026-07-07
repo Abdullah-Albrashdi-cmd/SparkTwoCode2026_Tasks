@@ -36,14 +36,7 @@ namespace SP_1_Session_4_Practice_Task
         //Task5
         static bool IsEven(int number)
         {
-            bool isEvenOrOdd;
-            if (number % 2 == 0) 
-            {
-                isEvenOrOdd = true;
-            }
-            else { isEvenOrOdd =  false; }
-
-            return isEvenOrOdd ;
+            return (number % 2 == 0);
         }
 
 
@@ -79,6 +72,7 @@ namespace SP_1_Session_4_Practice_Task
             //Task4
             {
                 DisplayMenu(userName);
+                Console.WriteLine();
             }
 
 
@@ -86,9 +80,9 @@ namespace SP_1_Session_4_Practice_Task
             Console.WriteLine("Enter a number to check if its (even/odd): ");
             int num = Convert.ToInt32(Console.ReadLine());
 
-            string reselt1 = IsEven(num).ToString();
+            bool reselt1 = IsEven(num);
 
-            if (reselt1 == "true")
+            if (reselt1)
             {
                 Console.WriteLine("The number is even.");
 
@@ -97,7 +91,7 @@ namespace SP_1_Session_4_Practice_Task
             {
                 Console.WriteLine("The number is odd.");
             }
-
+            Console.WriteLine();
 
         }
     }
