@@ -250,6 +250,7 @@ namespace SP_1_Session_4_Practice_Task
                 double area2 = CalculateArea(length1,wedth1);
                 Console.WriteLine("The area of the Rectangle is: " + area2);
             }
+            Console.WriteLine();
 
 
 
