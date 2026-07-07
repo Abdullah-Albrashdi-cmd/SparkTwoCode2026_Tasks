@@ -40,7 +40,7 @@ namespace SP_1_Session_4_Practice_Task
         }
 
         //Task6
-        static double CalculateArea(double lenght, double width)
+        static double CalculateArea1(double lenght, double width)
         {
             return  (lenght * width);
         }
@@ -104,6 +104,16 @@ namespace SP_1_Session_4_Practice_Task
         static int Multiply(int n1, int n2, int n3)
         {
             return n1 * n2 * n3;
+        }
+
+        //Task10
+        static double CalculateArea(double sideOfSeq)
+        {
+            return sideOfSeq * sideOfSeq;
+        }
+        static double CalculateArea(double a, double b)
+        {
+            return a*b;
         }
 
 
@@ -170,7 +180,7 @@ namespace SP_1_Session_4_Practice_Task
             Console.WriteLine("Enter the Widht: ");
             double Width = Convert.ToDouble(Console.ReadLine());
 
-            double area = CalculateArea(length, Width);
+            double area = CalculateArea1(length, Width);
             double param = CalculatePerimeter(length, Width);
 
             Console.WriteLine("The area os the Rectangle is: "+area);
@@ -215,6 +225,31 @@ namespace SP_1_Session_4_Practice_Task
 
 
 
+            //Task 10
+            Console.WriteLine("Which shape do you want to calculate the area of?");
+            Console.WriteLine("1.Squarer");
+            Console.WriteLine("2.Rectangle");
+            Console.WriteLine("Enter your choice (1/2): ");
+            int choice = Convert.ToInt32(Console.ReadLine());
+
+            if (choice == 1)
+            {
+                Console.WriteLine("Enrt the side length: ");
+                double sideLen = Convert.ToInt32(Console.ReadLine());
+                double area1 = CalculateArea(sideLen);
+                Console.WriteLine("The area of the Square is: " + area1);
+
+            }
+            else if (choice == 2)
+            {
+                Console.WriteLine("Enrt the length: ");
+                double length1 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Enrt the width: ");
+                double wedth1 = Convert.ToInt32(Console.ReadLine());
+
+                double area2 = CalculateArea(length1,wedth1);
+                Console.WriteLine("The area of the Rectangle is: " + area2);
+            }
 
 
 
