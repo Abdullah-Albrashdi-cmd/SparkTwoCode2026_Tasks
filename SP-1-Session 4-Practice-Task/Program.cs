@@ -179,8 +179,9 @@ namespace SP_1_Session_4_Practice_Task
             //Task8
             Console.WriteLine("Enter an integer number to count down from the num to 1: ");
             int num1 = Convert.ToInt32(Console.ReadLine());
-
+            Console.WriteLine();
             Countdown(num1);
+            Console.WriteLine();
 
 
 
