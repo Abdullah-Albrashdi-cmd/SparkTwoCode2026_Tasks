@@ -24,6 +24,15 @@ namespace SP_1_Session_4_Practice_Task
             return F;
         }
 
+        //Task4
+        static void DisplayMenu(string name)
+        {
+            Console.WriteLine("OPTION MENU");
+            Console.WriteLine("1.Start");
+            Console.WriteLine("2.Help");
+            Console.WriteLine("3.Exit");
+        }
+
 
 
         static void Main(string[] args)
@@ -54,6 +63,13 @@ namespace SP_1_Session_4_Practice_Task
             Console.WriteLine();
 
 
+            //Task4
+            {
+                DisplayMenu(userName);
+            }
+
+
+            
 
         }
     }
