@@ -92,6 +92,20 @@ namespace SP_1_Session_4_Practice_Task
             }
         }
 
+        //Task9
+        static int Multiply(int n1, int n2)
+        {
+            return n1 * n2;
+        }
+        static double Multiply(double n1, double n2)
+        {
+            return n1 * n2;
+        }
+        static int Multiply(int n1, int n2, int n3)
+        {
+            return n1 * n2 * n3;
+        }
+
 
 
 
@@ -182,6 +196,22 @@ namespace SP_1_Session_4_Practice_Task
             Console.WriteLine();
             Countdown(num1);
             Console.WriteLine();
+
+
+
+
+            //Task9
+            int n1 = 3;
+            int n2 = 6;
+            int n3 = 7;
+            double n4 = 5.2;
+            double n5 = 2.8;
+
+            Console.WriteLine("The reselt of calling Multiply(with two intger parameters is: " + Multiply(n1, n2));
+            Console.WriteLine("The reselt of calling Multiply(with two double parameters is: " + Multiply(n4, n5));
+            Console.WriteLine("The reselt of calling Multiply(with three intger parameters is: " + Multiply(n2, n3));
+
+
 
 
 
