@@ -141,6 +141,7 @@ namespace SP_1_Session_4_Practice_Task
                 Console.WriteLine("Error: " + ex.Message);
                 return 0;
             }
+        }
         static void DisplayResult(string opname, double reselt)
         {
             Console.WriteLine("The reselt of the " + opname + " is: " + reselt);
@@ -312,30 +313,32 @@ namespace SP_1_Session_4_Practice_Task
                             Console.WriteLine("Enter two numbers to subtract: ");
                             double a2 = Convert.ToDouble(Console.ReadLine());
                             double b2 = Convert.ToDouble(Console.ReadLine());
-                            double res2 = Subtract(a2, b2);
-                            DisplayResult("Subtraction", res2);
+                            double reslt2 = Subtract(a2, b2);
+                            DisplayResult("Subtraction", reslt2);
                             break;
 
                         case 3:
                             Console.WriteLine("Enter two numbers to multiply: ");
                             double a3 = Convert.ToDouble(Console.ReadLine());
                             double b3 = Convert.ToDouble(Console.ReadLine());
-                            double res3 = MultiplyNumbers(a3, b3);
-                            DisplayResult("Multiplication", res3);
+                            double reslt3 = MultiplyNumbers(a3, b3);
+                            DisplayResult("Multiplication", reslt3);
                             break;
 
                         case 4:
                             Console.WriteLine("Enter two numbers to divide: ");
                             double a4 = Convert.ToDouble(Console.ReadLine());
                             double b4 = Convert.ToDouble(Console.ReadLine());
-                            double res4 = DivideNumbers(a4, b4);
-                            DisplayResult("Division", res4);
+                            double reslt4 = DivideNumbers(a4, b4);
+                            DisplayResult("Division", reslt4);
                             break;
 
                         case 5:
+
                             Console.WriteLine("Exiting the program.");
                             return;
                     }
+
                     Console.WriteLine();
                 }
 
