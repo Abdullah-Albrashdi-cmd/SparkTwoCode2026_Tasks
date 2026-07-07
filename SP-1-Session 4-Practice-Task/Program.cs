@@ -116,6 +116,39 @@ namespace SP_1_Session_4_Practice_Task
             return a*b;
         }
 
+        //Task11
+        static double Add(double a, double b)
+        {
+            return a + b;
+        }
+        static double Subtract(double a, double b)
+        {
+            return a - b;
+        }
+        static double MultiplyNumbers(double a, double b)
+        {
+            return a * b;
+        }
+        static double DivideNumbers(double a, double b)
+        {
+            try
+            {
+                double d = a / b;
+                return d;
+            }
+            catch (DivideByZeroException ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+                return 0;
+            }
+        static void DisplayResult(string opname, double reselt)
+        {
+            Console.WriteLine("The reselt of the " + opname + " is: " + reselt);
+        }
+
+
+        //Task12
+
 
 
 
@@ -251,6 +284,65 @@ namespace SP_1_Session_4_Practice_Task
                 Console.WriteLine("The area of the Rectangle is: " + area2);
             }
             Console.WriteLine();
+
+
+            //Task11
+            while(true)
+                {
+                    Console.WriteLine("Choose an operation:");
+                    Console.WriteLine("1.Add");
+                    Console.WriteLine("2.Subtract");
+                    Console.WriteLine("3.Multiply");
+                    Console.WriteLine("4.Divide");
+                    Console.WriteLine("5.Exit");
+
+                    int op = Convert.ToInt32(Console.ReadLine());
+
+                    switch (op)
+                    {
+                        case 1:
+                            Console.WriteLine("Enter two numbers to add: ");
+                            double a1 = Convert.ToDouble(Console.ReadLine());
+                            double b1 = Convert.ToDouble(Console.ReadLine());
+                            double res1 = Add(a1, b1);
+                            DisplayResult("Addition", res1);
+                            break;
+
+                        case 2:
+                            Console.WriteLine("Enter two numbers to subtract: ");
+                            double a2 = Convert.ToDouble(Console.ReadLine());
+                            double b2 = Convert.ToDouble(Console.ReadLine());
+                            double res2 = Subtract(a2, b2);
+                            DisplayResult("Subtraction", res2);
+                            break;
+
+                        case 3:
+                            Console.WriteLine("Enter two numbers to multiply: ");
+                            double a3 = Convert.ToDouble(Console.ReadLine());
+                            double b3 = Convert.ToDouble(Console.ReadLine());
+                            double res3 = MultiplyNumbers(a3, b3);
+                            DisplayResult("Multiplication", res3);
+                            break;
+
+                        case 4:
+                            Console.WriteLine("Enter two numbers to divide: ");
+                            double a4 = Convert.ToDouble(Console.ReadLine());
+                            double b4 = Convert.ToDouble(Console.ReadLine());
+                            double res4 = DivideNumbers(a4, b4);
+                            DisplayResult("Division", res4);
+                            break;
+
+                        case 5:
+                            Console.WriteLine("Exiting the program.");
+                            return;
+                    }
+                    Console.WriteLine();
+                }
+
+
+
+
+            //Task12
 
 
 
