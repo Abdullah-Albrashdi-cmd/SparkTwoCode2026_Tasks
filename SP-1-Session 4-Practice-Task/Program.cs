@@ -335,7 +335,7 @@ namespace SP_1_Session_4_Practice_Task
 
                         case 5:
 
-                            Console.WriteLine("Exiting the program.");
+                        Console.WriteLine("Exiting the program.");
                             return;
                     }
 
