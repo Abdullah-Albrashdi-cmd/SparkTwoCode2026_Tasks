@@ -160,7 +160,7 @@ namespace SP_1_Session_4_Practice_Task
 
             string grade = GetGradeLetter(score);
 
-            Console.WriteLine("Your garde is: ");
+            Console.WriteLine("Your garde is: "+grade);
             Console.WriteLine();
 
 
