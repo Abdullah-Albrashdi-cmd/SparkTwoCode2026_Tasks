@@ -39,6 +39,17 @@ namespace SP_1_Session_4_Practice_Task
             return (number % 2 == 0);
         }
 
+        //Task6
+        static double CalculateArea(double lenght, double width)
+        {
+            return  (lenght * width);
+        }
+
+        static double CalculatePerimeter(double lenght, double width)
+        {
+            return (2 * (lenght + width));
+        }
+
 
 
         static void Main(string[] args)
@@ -92,6 +103,27 @@ namespace SP_1_Session_4_Practice_Task
                 Console.WriteLine("The number is odd.");
             }
             Console.WriteLine();
+
+
+            //Task6
+            Console.WriteLine("Enter the Length: ");
+            double length = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Enter the Widht: ");
+            double Width = Convert.ToDouble(Console.ReadLine());
+
+            double area = CalculateArea(length, Width);
+            double param = CalculatePerimeter(length, Width);
+
+            Console.WriteLine("The area os the Rectangle is: "+area);
+            Console.WriteLine("The Perimeter os the Rectangle is: " + param);
+            Console.WriteLine();
+
+
+
+
+
+
 
         }
     }
