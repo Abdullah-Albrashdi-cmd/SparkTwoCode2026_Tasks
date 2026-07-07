@@ -210,7 +210,7 @@ namespace SP_1_Session_4_Practice_Task
             Console.WriteLine("The reselt of calling Multiply(with two intger parameters is: " + Multiply(n1, n2));
             Console.WriteLine("The reselt of calling Multiply(with two double parameters is: " + Multiply(n4, n5));
             Console.WriteLine("The reselt of calling Multiply(with three intger parameters is: " + Multiply(n2, n3));
-
+            Console.WriteLine();
 
 
 
