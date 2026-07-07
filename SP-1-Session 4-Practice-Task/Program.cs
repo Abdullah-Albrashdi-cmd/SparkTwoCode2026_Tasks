@@ -83,6 +83,17 @@ namespace SP_1_Session_4_Practice_Task
             return grade;
         }
 
+        //Task8
+        static void Countdown(int num)
+        {
+            for (int i = num; i >0; i--)
+            {
+                Console.WriteLine(i);
+            }
+        }
+
+
+
 
 
         static void Main(string[] args)
@@ -163,6 +174,13 @@ namespace SP_1_Session_4_Practice_Task
             Console.WriteLine("Your garde is: "+grade);
             Console.WriteLine();
 
+
+
+            //Task8
+            Console.WriteLine("Enter an integer number to count down from the num to 1: ");
+            int num1 = Convert.ToInt32(Console.ReadLine());
+
+            Countdown(num1);
 
 
 
