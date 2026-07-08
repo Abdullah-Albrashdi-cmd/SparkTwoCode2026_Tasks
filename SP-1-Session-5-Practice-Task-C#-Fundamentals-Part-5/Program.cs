@@ -21,15 +21,17 @@
 
             //Task2: Dynamic To-Do List
             List<string> list = new List<string>();
-            for (int i = 0;i < list.Count;i++)
+            for (int i = 0;i < 5;i++)
             {
                 Console.WriteLine("Enter task: ");
-                list.Add(list[i]);
+                string input = Console.ReadLine();
+                list.Add(input);
 
             }
-            foreach(string i in list)
+            Console.WriteLine("The tasks are: ");
+            foreach (string input in list)
             {
-                Console.WriteLine(i);
+                Console.WriteLine(input);
             }
 
 
