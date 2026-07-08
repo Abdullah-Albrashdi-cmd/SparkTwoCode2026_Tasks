@@ -53,6 +53,7 @@
 
             Console.WriteLine("You went back from: " + previousPage);
             Console.WriteLine("You are now on: " + history.Peek());
+            Console.WriteLine();
 
 
         }
