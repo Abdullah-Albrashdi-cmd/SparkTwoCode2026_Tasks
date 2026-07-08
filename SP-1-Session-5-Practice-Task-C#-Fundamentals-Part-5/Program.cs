@@ -18,6 +18,21 @@
                 Console.WriteLine();
             }
 
+
+            //Task2: Dynamic To-Do List
+            List<string> list = new List<string>();
+            for (int i = 0;i < list.Count;i++)
+            {
+                Console.WriteLine("Enter task: ");
+                list.Add(list[i]);
+
+            }
+            foreach(string i in list)
+            {
+                Console.WriteLine(i);
+            }
+
+
         }
     }
 }
