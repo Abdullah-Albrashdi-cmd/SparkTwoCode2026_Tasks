@@ -33,6 +33,7 @@
             {
                 Console.WriteLine(input);
             }
+            Console.WriteLine();
 
 
         }
