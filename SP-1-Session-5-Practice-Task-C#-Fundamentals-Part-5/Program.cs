@@ -36,6 +36,25 @@
             Console.WriteLine();
 
 
+            //Task3: Browsing History stack
+            Stack<string> history = new Stack<string>();
+
+            for (int i = 1; i <= 3; i++)
+            {
+                Console.Write("Enter website URL " + i + ": ");
+                string url = Console.ReadLine();
+                history.Push(url);
+            }
+
+            Console.WriteLine("Current page: " + history.Peek());
+
+            Console.WriteLine("Pressing back button ");
+            string previousPage = history.Pop();
+
+            Console.WriteLine("You went back from: " + previousPage);
+            Console.WriteLine("You are now on: " + history.Peek());
+
+
         }
     }
 }
