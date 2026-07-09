@@ -23,6 +23,23 @@
             return num.Find(x => x < 60);
         }
 
+        //Task10
+        static Queue<string> RemoveJob(Queue<string> jopNum, string jopRemNum)
+        {
+            Queue<string> queue = new Queue<string>();
+
+            while (jopNum.Count >0)
+            {
+                var rem = jopNum.Dequeue();
+                if (rem != jopRemNum)
+                {
+                    queue.Enqueue(rem);
+                }
+            }
+
+            return queue;
+        }
+
 
         static void Main(string[] args)
         {
@@ -178,7 +195,7 @@
                 Console.WriteLine("Enter an Action (or type 'stop' to Exit: ");
                 string action = Console.ReadLine();
 
-                if (action  .ToLower() == "stop")
+                if (action.ToLower() == "stop")
                 {
                     stop = "stop";
                 }
@@ -197,7 +214,7 @@
             {
                 Console.WriteLine("The remaining actions are: " + action);
             }
-            */
+            
 
             //Task9: Grade Analyzer with Functions
             Console.WriteLine("How many grades do you want to enter?");
@@ -214,6 +231,47 @@
             Console.WriteLine("The average grade is: "+CalculateAverage(num));
             Console.WriteLine("The First grade below 60 is: "+FindFirstFailing(num));
             Console.WriteLine();
+            */
+
+
+            //Task10: Print Queue Manager
+            Queue<String> queue = new Queue<String>();
+
+            string done1 = "done";
+
+            while (done1 != "done")
+            {
+                Console.WriteLine("Enter a add print job names (or type 'done' to finish):");
+                string job = Console.ReadLine();
+                
+                if (job.ToLower() == "done")
+                {
+                    done1 = "done";
+                }
+                else
+                {
+                    queue.Enqueue(job);
+                }
+            }
+            Console.WriteLine("Enter name jop to be cancle:");
+            string remove1 = Console.ReadLine();
+
+            Console.WriteLine("The Queue befor remove: ");
+
+            foreach (string item in queue)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.WriteLine("The Queue after remove:");
+            queue = RemoveJob(queue, remove1);
+
+            foreach (string item in queue)
+            {
+                Console.WriteLine(item);
+            }
+
+
 
 
         }
