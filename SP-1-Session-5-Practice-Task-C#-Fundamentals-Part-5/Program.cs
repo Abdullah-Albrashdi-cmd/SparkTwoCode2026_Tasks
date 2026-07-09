@@ -122,7 +122,7 @@
                 Console.WriteLine(item);
             }
             Console.WriteLine();
-            */
+            
 
 
 
@@ -142,6 +142,37 @@
             Console.WriteLine("2nd place: " + scores[1]);
             Console.WriteLine("3rd place: " + scores[2]);
             Console.WriteLine();
+            */
+
+
+            //Task8: Undo Last Action
+
+            Stack<string> actions = new Stack<string>();
+
+            string stop = "";
+
+            while (stop != "stop")
+            {
+                if (stop == "stop")
+                {
+                    break;
+                }
+
+                Console.WriteLine("Enter an Action (or type 'stop' to Exit: ");
+                string action = Console.ReadLine();
+                actions.Push(action);
+
+            }
+            var removedAc1 = actions.Pop();
+            Console.WriteLine("The last action removed is: " + removedAc1);
+            var removedAc2 = actions.Pop();
+            Console.WriteLine("The last action removed is: " + removedAc2);
+
+            foreach (string action in actions)
+            {
+                Console.WriteLine("The remaining actions are: " + action);
+            }
+
 
 
         }
