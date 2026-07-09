@@ -44,7 +44,7 @@
         static void Main(string[] args)
         {
 
-            /*
+            
             //Task1: Fixed Grades Array
             int[] garde = new int[5];
             for (int i = 0; i < garde.Length; i++) 
@@ -231,7 +231,7 @@
             Console.WriteLine("The average grade is: "+CalculateAverage(num));
             Console.WriteLine("The First grade below 60 is: "+FindFirstFailing(num));
             Console.WriteLine();
-            */
+            
 
 
             //Task10: Print Queue Manager
