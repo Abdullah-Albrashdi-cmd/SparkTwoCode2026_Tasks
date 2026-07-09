@@ -84,7 +84,7 @@
             }
             Array.Sort(grade1);
             Console.WriteLine("The lowest grade is: " + grade1[0]);
-
+            Console.WriteLine();
         }
     }
 }
