@@ -71,7 +71,7 @@
             string name1 = customQu.Dequeue();
             Console.WriteLine("Now serving: " + name1);
             Console.WriteLine();
-            */
+            
 
 
             //Task5: Array Grade Range
@@ -85,6 +85,46 @@
             Array.Sort(grade1);
             Console.WriteLine("The lowest grade is: " + grade1[0]);
             Console.WriteLine();
+            */
+
+
+            //Task6: Filtered Shopping List
+            List<string> shoppingList = new List<string>();
+
+            string done = "";
+
+            while (done != "done")
+            {
+                Console.WriteLine("Enter an item (or type 'done' to finish):");
+                string item = Console.ReadLine();
+                if (item.ToLower() == "done")
+                {
+                    done = "done";
+                }
+                else
+                {
+                    shoppingList.Add(item);
+                }
+            }
+            Console.WriteLine("The List befor removing an item is: ");
+            foreach (string item in shoppingList)
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine("Enter item name to remove: ");
+            string removeItem = Console.ReadLine();
+            shoppingList.Remove(removeItem);
+
+            Console.WriteLine("The List after removing an item is: ");
+
+            foreach (string item in shoppingList)
+            {
+                Console.WriteLine(item);
+            }
+
+
+
+
         }
     }
 }
