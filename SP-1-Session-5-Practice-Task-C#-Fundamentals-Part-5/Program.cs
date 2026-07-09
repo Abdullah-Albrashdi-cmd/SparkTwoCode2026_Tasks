@@ -85,7 +85,7 @@
             Array.Sort(grade1);
             Console.WriteLine("The lowest grade is: " + grade1[0]);
             Console.WriteLine();
-            */
+            
 
 
             //Task6: Filtered Shopping List
@@ -122,7 +122,25 @@
                 Console.WriteLine(item);
             }
             Console.WriteLine();
+            */
 
+
+
+            //Task7: high score podium
+            List<int> scores = new List<int>();
+
+            for (int i = 1; i <= 5; i++)
+            {
+                Console.WriteLine("Enter game score " + i + ":");
+                int score = Convert.ToInt32(Console.ReadLine());
+                scores.Add(score);
+            }
+            scores.Sort();
+            scores.Reverse();
+
+            Console.WriteLine("1st place: " + scores[0]);
+            Console.WriteLine("2nd place: " + scores[1]);
+            Console.WriteLine("3rd place: " + scores[2]);
 
 
 
