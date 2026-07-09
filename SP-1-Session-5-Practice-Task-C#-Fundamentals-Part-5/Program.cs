@@ -204,7 +204,7 @@
             int gradeNum = Convert.ToInt32(Console.ReadLine());
 
             List<int> num = new List<int>();
-            for (int i = 0; i < gradeNum; i++) 
+            for (int i = 1; i <= gradeNum; i++) 
             {
                 Console.WriteLine("Enter garde " + i + " :");
                 int grade2 = Convert.ToInt32(Console.ReadLine());
@@ -213,7 +213,7 @@
             }
             Console.WriteLine("The average grade is: "+CalculateAverage(num));
             Console.WriteLine("The First grade below 60 is: "+FindFirstFailing(num));
-
+            Console.WriteLine();
 
 
         }
