@@ -153,15 +153,18 @@
 
             while (stop != "stop")
             {
-                if (stop == "stop")
-                {
-                    break;
-                }
-
                 Console.WriteLine("Enter an Action (or type 'stop' to Exit: ");
                 string action = Console.ReadLine();
-                actions.Push(action);
 
+                if (stop.ToLower() == "stop")
+                {
+                    stop = "stop";
+                }
+
+                else
+                {
+                    actions.Push(action);
+                }
             }
             var removedAc1 = actions.Pop();
             Console.WriteLine("The last action removed is: " + removedAc1);
