@@ -2,6 +2,28 @@
 {
     internal class Program
     {
+
+        //Task9
+        static double CalculateAverage(List<int> num)
+        {
+            double sum = 0;
+            double count = 0;
+            foreach (var item in num)
+            {
+                sum += item;
+                count++;
+            }
+            return sum / count;
+        }
+        static int FindFirstFailing(List<int> num)
+        {
+            num.Sort();
+            
+
+            return num.Find(x => x < 60);
+        }
+
+
         static void Main(string[] args)
         {
 
@@ -142,7 +164,7 @@
             Console.WriteLine("2nd place: " + scores[1]);
             Console.WriteLine("3rd place: " + scores[2]);
             Console.WriteLine();
-            */
+            
 
 
             //Task8: Undo Last Action
@@ -175,6 +197,22 @@
             {
                 Console.WriteLine("The remaining actions are: " + action);
             }
+            */
+
+            //Task9: Grade Analyzer with Functions
+            Console.WriteLine("How many grades do you want to enter?");
+            int gradeNum = Convert.ToInt32(Console.ReadLine());
+
+            List<int> num = new List<int>();
+            for (int i = 0; i < gradeNum; i++) 
+            {
+                Console.WriteLine("Enter garde " + i + " :");
+                int grade2 = Convert.ToInt32(Console.ReadLine());
+                num.Add(grade2);
+                
+            }
+            Console.WriteLine("The average grade is: "+CalculateAverage(num));
+            Console.WriteLine("The First grade below 60 is: "+FindFirstFailing(num));
 
 
 
