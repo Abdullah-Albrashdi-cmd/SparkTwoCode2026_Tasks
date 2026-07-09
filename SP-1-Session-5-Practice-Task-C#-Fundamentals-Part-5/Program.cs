@@ -70,7 +70,7 @@
             }
             string name1 = customQu.Dequeue();
             Console.WriteLine("Now serving: " + name1);
-
+            Console.WriteLine();
 
 
 
