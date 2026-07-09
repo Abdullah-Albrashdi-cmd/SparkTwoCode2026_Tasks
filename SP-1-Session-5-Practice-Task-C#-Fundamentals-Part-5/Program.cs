@@ -56,7 +56,7 @@
             Console.WriteLine("You went back from: " + previousPage);
             Console.WriteLine("You are now on: " + history.Peek());
             Console.WriteLine();
-            */
+            
 
 
             //Task4: Customer Service Queue
@@ -71,8 +71,19 @@
             string name1 = customQu.Dequeue();
             Console.WriteLine("Now serving: " + name1);
             Console.WriteLine();
+            */
 
 
+            //Task5: Array Grade Range
+            int[] grade1 = new int[5];
+
+            for (int i = 0; i < grade1.Length; i++)
+            {
+                Console.WriteLine("Enter the grade: ");
+                grade1[i] = Convert.ToInt32(Console.ReadLine());
+            }
+            Array.Sort(grade1);
+            Console.WriteLine("The lowest grade is: " + grade1[0]);
 
         }
     }
