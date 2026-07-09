@@ -56,6 +56,22 @@
             Console.WriteLine();
 
 
+
+            //Task4: Customer Service Queue
+            Queue<string> customQu = new Queue<string>();
+
+            for (int i = 0; i <= 3; i++)
+            {
+                Console.WriteLine("Enter Customer " + i + " name:");
+                string name = Console.ReadLine();
+                customQu.Enqueue(name);
+            }
+            string name1 = customQu.Dequeue();
+            Console.WriteLine("Now serving: " + name1);
+
+
+
+
         }
     }
 }
