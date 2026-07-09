@@ -156,7 +156,7 @@
                 Console.WriteLine("Enter an Action (or type 'stop' to Exit: ");
                 string action = Console.ReadLine();
 
-                if (stop.ToLower() == "stop")
+                if (action  .ToLower() == "stop")
                 {
                     stop = "stop";
                 }
