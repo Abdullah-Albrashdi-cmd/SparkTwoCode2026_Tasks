@@ -237,7 +237,7 @@
             //Task10: Print Queue Manager
             Queue<String> queue = new Queue<String>();
 
-            string done1 = "done";
+            string done1 = "";
 
             while (done1 != "done")
             {
