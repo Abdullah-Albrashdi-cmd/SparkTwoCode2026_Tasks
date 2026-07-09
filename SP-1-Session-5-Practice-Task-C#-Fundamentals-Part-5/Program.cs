@@ -141,7 +141,7 @@
             Console.WriteLine("1st place: " + scores[0]);
             Console.WriteLine("2nd place: " + scores[1]);
             Console.WriteLine("3rd place: " + scores[2]);
-
+            Console.WriteLine();
 
 
         }
