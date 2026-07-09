@@ -121,6 +121,7 @@
             {
                 Console.WriteLine(item);
             }
+            Console.WriteLine();
 
 
 
