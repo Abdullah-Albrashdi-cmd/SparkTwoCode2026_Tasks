@@ -2,8 +2,49 @@
 {
     internal class Program
     {
+
+        //Task9
+        static double CalculateAverage(List<int> num)
+        {
+            double sum = 0;
+            double count = 0;
+            foreach (var item in num)
+            {
+                sum += item;
+                count++;
+            }
+            return sum / count;
+        }
+        static int FindFirstFailing(List<int> num)
+        {
+            num.Sort();
+            
+
+            return num.Find(x => x < 60);
+        }
+
+        //Task10
+        static Queue<string> RemoveJob(Queue<string> jopNum, string jopRemNum)
+        {
+            Queue<string> queue = new Queue<string>();
+
+            while (jopNum.Count >0)
+            {
+                var rem = jopNum.Dequeue();
+                if (rem != jopRemNum)
+                {
+                    queue.Enqueue(rem);
+                }
+            }
+
+            return queue;
+        }
+
+
         static void Main(string[] args)
         {
+
+            
             //Task1: Fixed Grades Array
             int[] garde = new int[5];
             for (int i = 0; i < garde.Length; i++) 
@@ -54,6 +95,183 @@
             Console.WriteLine("You went back from: " + previousPage);
             Console.WriteLine("You are now on: " + history.Peek());
             Console.WriteLine();
+            
+
+
+            //Task4: Customer Service Queue
+            Queue<string> customQu = new Queue<string>();
+
+            for (int i = 1; i <= 3; i++)
+            {
+                Console.WriteLine("Enter Customer " + i + " name:");
+                string name = Console.ReadLine();
+                customQu.Enqueue(name);
+            }
+            string name1 = customQu.Dequeue();
+            Console.WriteLine("Now serving: " + name1);
+            Console.WriteLine();
+            
+
+
+            //Task5: Array Grade Range
+            int[] grade1 = new int[5];
+
+            for (int i = 0; i < grade1.Length; i++)
+            {
+                Console.WriteLine("Enter the grade: ");
+                grade1[i] = Convert.ToInt32(Console.ReadLine());
+            }
+            Array.Sort(grade1);
+            Console.WriteLine("The lowest grade is: " + grade1[0]);
+            Console.WriteLine();
+            
+
+
+            //Task6: Filtered Shopping List
+            List<string> shoppingList = new List<string>();
+
+            string done = "";
+
+            while (done != "done")
+            {
+                Console.WriteLine("Enter an item (or type 'done' to finish):");
+                string item = Console.ReadLine();
+                if (item.ToLower() == "done")
+                {
+                    done = "done";
+                }
+                else
+                {
+                    shoppingList.Add(item);
+                }
+            }
+            Console.WriteLine("The List befor removing an item is: ");
+            foreach (string item in shoppingList)
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine("Enter item name to remove: ");
+            string removeItem = Console.ReadLine();
+            shoppingList.Remove(removeItem);
+
+            Console.WriteLine("The List after removing an item is: ");
+
+            foreach (string item in shoppingList)
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine();
+            
+
+
+
+            //Task7: high score podium
+            List<int> scores = new List<int>();
+
+            for (int i = 1; i <= 5; i++)
+            {
+                Console.WriteLine("Enter game score " + i + ":");
+                int score = Convert.ToInt32(Console.ReadLine());
+                scores.Add(score);
+            }
+            scores.Sort();
+            scores.Reverse();
+
+            Console.WriteLine("1st place: " + scores[0]);
+            Console.WriteLine("2nd place: " + scores[1]);
+            Console.WriteLine("3rd place: " + scores[2]);
+            Console.WriteLine();
+            
+
+
+            //Task8: Undo Last Action
+
+            Stack<string> actions = new Stack<string>();
+
+            string stop = "";
+
+            while (stop != "stop")
+            {
+                Console.WriteLine("Enter an Action (or type 'stop' to Exit: ");
+                string action = Console.ReadLine();
+
+                if (action.ToLower() == "stop")
+                {
+                    stop = "stop";
+                }
+
+                else
+                {
+                    actions.Push(action);
+                }
+            }
+            var removedAc1 = actions.Pop();
+            Console.WriteLine("The last action removed is: " + removedAc1);
+            var removedAc2 = actions.Pop();
+            Console.WriteLine("The last action removed is: " + removedAc2);
+
+            foreach (string action in actions)
+            {
+                Console.WriteLine("The remaining actions are: " + action);
+            }
+            
+
+            //Task9: Grade Analyzer with Functions
+            Console.WriteLine("How many grades do you want to enter?");
+            int gradeNum = Convert.ToInt32(Console.ReadLine());
+
+            List<int> num = new List<int>();
+            for (int i = 1; i <= gradeNum; i++) 
+            {
+                Console.WriteLine("Enter garde " + i + " :");
+                int grade2 = Convert.ToInt32(Console.ReadLine());
+                num.Add(grade2);
+                
+            }
+            Console.WriteLine("The average grade is: "+CalculateAverage(num));
+            Console.WriteLine("The First grade below 60 is: "+FindFirstFailing(num));
+            Console.WriteLine();
+            
+
+
+            //Task10: Print Queue Manager
+            Queue<String> queue = new Queue<String>();
+
+            string done1 = "";
+
+            while (done1 != "done")
+            {
+                Console.WriteLine("Enter a add print job names (or type 'done' to finish):");
+                string job = Console.ReadLine();
+                
+                if (job.ToLower() == "done")
+                {
+                    done1 = "done";
+                }
+                else
+                {
+                    queue.Enqueue(job);
+                }
+            }
+            Console.WriteLine("Enter name jop to be cancle:");
+            string remove1 = Console.ReadLine();
+
+            Console.WriteLine("The Queue befor remove: ");
+
+            foreach (string item in queue)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.WriteLine("The Queue after remove:");
+            queue = RemoveJob(queue, remove1);
+
+            foreach (string item in queue)
+            {
+                Console.WriteLine(item);
+            }
+
+
 
 
         }
