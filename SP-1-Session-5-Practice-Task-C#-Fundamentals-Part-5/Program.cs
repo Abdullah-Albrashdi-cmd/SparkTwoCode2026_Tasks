@@ -4,6 +4,8 @@
     {
         static void Main(string[] args)
         {
+
+            /*
             //Task1: Fixed Grades Array
             int[] garde = new int[5];
             for (int i = 0; i < garde.Length; i++) 
@@ -54,13 +56,13 @@
             Console.WriteLine("You went back from: " + previousPage);
             Console.WriteLine("You are now on: " + history.Peek());
             Console.WriteLine();
-
+            */
 
 
             //Task4: Customer Service Queue
             Queue<string> customQu = new Queue<string>();
 
-            for (int i = 0; i <= 3; i++)
+            for (int i = 1; i <= 3; i++)
             {
                 Console.WriteLine("Enter Customer " + i + " name:");
                 string name = Console.ReadLine();
