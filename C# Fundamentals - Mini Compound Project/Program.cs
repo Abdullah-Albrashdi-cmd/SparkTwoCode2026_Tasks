@@ -100,13 +100,10 @@
             accountNumbers.Add(accountNum);
             Console.WriteLine("Enter the initial deposit amount (not negative): ");
             double amount = Convert.ToDouble(Console.ReadLine());
-            foreach (double item in balances)
+            if (amount < 0)
             {
-                if (amount <0)
-                {
-                    Console.WriteLine("The entered amount is negative, Enter another one:");
-                    amount = Convert.ToDouble(Console.ReadLine());
-                }
+                Console.WriteLine("The entered amount is negative, Enter another one:");
+                amount = Convert.ToDouble(Console.ReadLine());
             }
             balances.Add(amount);
 
