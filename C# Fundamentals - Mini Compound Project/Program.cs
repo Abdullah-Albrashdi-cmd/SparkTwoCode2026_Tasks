@@ -107,14 +107,25 @@
             }
             balances.Add(amount);
 
-
-
-
-
         }
         static void DepositMoney()
         {
             // TODO: implement this service (see Section 3 requirements)
+            Console.WriteLine("Enter your account number: ");
+            double accnum1 = Convert.ToDouble(Console.ReadLine());
+            for (int i = 0; i < accountNumbers.Count; i++) 
+            {
+                if (accountNumbers[i] == accnum1)
+                {
+                    try
+                    {
+                        Console.WriteLine("Enter deposit amount: ");
+                        double amount1 = Convert.ToDouble(Console.ReadLine());
+                    } catch {
+
+                }
+            }
+
         }
         static void WithdrawMoney()
         {
