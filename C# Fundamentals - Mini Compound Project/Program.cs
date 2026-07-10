@@ -113,19 +113,40 @@
             // TODO: implement this service (see Section 3 requirements)
             Console.WriteLine("Enter your account number: ");
             double accnum1 = Convert.ToDouble(Console.ReadLine());
+
+            bool found = false;
+
             for (int i = 0; i < accountNumbers.Count; i++) 
             {
-                if (accountNumbers[i] == accnum1)
+                if (accountNumbers[i] == accnum1) 
                 {
+                    found = true;
                     try
                     {
                         Console.WriteLine("Enter deposit amount: ");
                         double amount1 = Convert.ToDouble(Console.ReadLine());
-                    } catch {
+                        if (amount1 < 0)
+                        {
+                            Console.WriteLine("Deposit amount must be greater than zero.");
 
+                        }
+                        else
+                        {
+                            balances[i] = balances[i] + amount1;
+                            Console.WriteLine("Deposit successful. New balance: " + balances[i]);
+                        }
+                    }
+                    catch (FormatException ex)
+                    {
+                        Console.WriteLine("Invalid amount entered: " + ex);
+                    }
+                    break;
                 }
             }
-
+            if (!found)
+            {
+                Console.WriteLine("Account number not found");
+            }
         }
         static void WithdrawMoney()
         {
