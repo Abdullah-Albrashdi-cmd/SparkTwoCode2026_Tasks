@@ -19,7 +19,7 @@
                 Console.WriteLine("3. Withdraw Money");
                 Console.WriteLine("4. Show Balance");
                 Console.WriteLine("5. Transfer Amount");
-                Console.WriteLine("6. <your 1st custom service - choose a name>");
+                Console.WriteLine("6. List All Accounts");
                 Console.WriteLine("7. <your 2nd custom service - choose a name>");
                 Console.WriteLine("8. Exit");
                 Console.Write("Choose an option: ");
@@ -52,6 +52,7 @@
                         break;
                     case 6:
                         // TODO: call your first custom service function here
+                        listAllAcc();
                         break;
                     case 7:
                         // TODO: call your second custom service function here
@@ -271,7 +272,28 @@
             }
 
         }
+
         // TODO: write two more void, no-parameter functions here for
         // your own custom services (option 6 and option 7)
+        static void listAllAcc()
+        {
+            if (accountNumbers.Count == 0)
+            {
+                Console.WriteLine("No Account Found");
+                
+            }
+            else
+            {
+                Console.WriteLine("--List of All Acount--");
+                for (int i = 0; i < accountNumbers.Count; i++)
+                {
+                    Console.WriteLine("Name: " + customerNames[i]);
+                    Console.WriteLine("Account number: " + accountNumbers[i]);
+                    Console.WriteLine("Current balance: " + balances[i]);
+                }
+
+            }
+
+        }
     }
 }
