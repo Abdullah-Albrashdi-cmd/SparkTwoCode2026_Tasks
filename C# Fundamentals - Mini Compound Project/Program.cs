@@ -272,6 +272,6 @@
 
         }
         // TODO: write two more void, no-parameter functions here for
-        // your own custom services (option 6 and option 
+        // your own custom services (option 6 and option 7)
     }
 }
