@@ -187,6 +187,29 @@
         static void ShowBalance()
         {
             // TODO: implement this service (see Section 3 requirements)
+            Console.WriteLine("Enter your account number: ");
+            double accnum = Convert.ToDouble(Console.ReadLine());
+
+            bool found = false;
+
+            for (int i = 0; i < accountNumbers.Count; i++)
+            {
+                if (accountNumbers[i] == accnum)
+                {
+                    found = true;
+                    try
+                    {
+                        Console.WriteLine("Customer's name: " + customerNames[i]);
+                        Console.WriteLine("Customer's account number: " + accountNumbers[i]);
+                        Console.WriteLine("Customer's current balance: " + balances[i]);
+                    }
+                    catch (FormatException ex)
+                    {
+                        Console.WriteLine("Account not found: " + ex);
+                    }
+                    break;
+                }
+            }
         }
         static void TransferAmount()
         {
