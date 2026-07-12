@@ -19,8 +19,8 @@
                 Console.WriteLine("3. Withdraw Money");
                 Console.WriteLine("4. Show Balance");
                 Console.WriteLine("5. Transfer Amount");
-                Console.WriteLine("6. <your 1st custom service - choose a name>");
-                Console.WriteLine("7. <your 2nd custom service - choose a name>");
+                Console.WriteLine("6. List All Accounts");
+                Console.WriteLine("7. Close an Account");
                 Console.WriteLine("8. Exit");
                 Console.Write("Choose an option: ");
                 int choice;
@@ -52,9 +52,11 @@
                         break;
                     case 6:
                         // TODO: call your first custom service function here
+                        listAllAcc();
                         break;
                     case 7:
                         // TODO: call your second custom service function here
+                        CloseAccount();
                         break;
                     case 8:
                         exitApp = true;
@@ -107,28 +109,223 @@
             }
             balances.Add(amount);
 
-
-
-
-
         }
         static void DepositMoney()
         {
             // TODO: implement this service (see Section 3 requirements)
+            Console.WriteLine("Enter your account number: ");
+            double accnum1 = Convert.ToDouble(Console.ReadLine());
+
+            bool found = false;
+
+            for (int i = 0; i < accountNumbers.Count; i++) 
+            {
+                if (accountNumbers[i] == accnum1) 
+                {
+                    found = true;
+                    try
+                    {
+                        Console.WriteLine("Enter deposit amount: ");
+                        double amount1 = Convert.ToDouble(Console.ReadLine());
+                        if (amount1 < 0)
+                        {
+                            Console.WriteLine("Deposit amount must be greater than zero.");
+
+                        }
+                        else
+                        {
+                            balances[i] = balances[i] + amount1;
+                            Console.WriteLine("Deposit successful. New balance: " + balances[i]);
+                        }
+                    }
+                    catch (FormatException ex)
+                    {
+                        Console.WriteLine("Invalid amount entered: " + ex);
+                    }
+                    break;
+                }
+            }
+            if (!found)
+            {
+                Console.WriteLine("Account number not found");
+            }
         }
         static void WithdrawMoney()
         {
             // TODO: implement this service (see Section 3 requirements)
+            Console.WriteLine("Enter your account number: ");
+            double accnum1 = Convert.ToDouble(Console.ReadLine());
+
+            bool found = false;
+
+            for (int i = 0; i < accountNumbers.Count; i++)
+            {
+                if (accountNumbers[i] == accnum1)
+                {
+                    found = true;
+                    try
+                    {
+                        Console.WriteLine("Enter withdrawal amount: ");
+                        double amount = Convert.ToDouble(Console.ReadLine());
+                        if (amount < 0)
+                        {
+                            Console.WriteLine("Withdrawal amount must be greater than zero.");
+
+                        }
+                        else
+                        {
+                            balances[i] = balances[i] -  amount;
+                            Console.WriteLine("Withdraw successful. New balance: " + balances[i]);
+                        }
+                    }
+                    catch (FormatException ex)
+                    {
+                        Console.WriteLine("Invalid amount entered: " + ex);
+                    }
+                    break;
+                }
+            }
         }
         static void ShowBalance()
         {
             // TODO: implement this service (see Section 3 requirements)
+            Console.WriteLine("Enter your account number: ");
+            double accnum = Convert.ToDouble(Console.ReadLine());
+
+            bool found = false;
+
+            for (int i = 0; i < accountNumbers.Count; i++)
+            {
+                if (accountNumbers[i] == accnum)
+                {
+                    found = true;
+                    try
+                    {
+                        Console.WriteLine("Customer's name: " + customerNames[i]);
+                        Console.WriteLine("Customer's account number: " + accountNumbers[i]);
+                        Console.WriteLine("Customer's current balance: " + balances[i]);
+                    }
+                    catch (FormatException ex)
+                    {
+                        Console.WriteLine("Account not found: " + ex);
+                    }
+                    break;
+                }
+            }
         }
         static void TransferAmount()
         {
             // TODO: implement this service (see Section 3 requirements)
+            Console.WriteLine("Enter the sender's account number: ");
+            double senderAcc = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Enter the receiver's account number: ");
+            double receiverAcc = Convert.ToDouble(Console.ReadLine());
+
+            int senderIndex = -1;
+            int receiverIndex = -1;
+
+            for (int i = 0; i < accountNumbers.Count; i++)
+            {
+                if (accountNumbers[i] == senderAcc)
+                {
+                    senderIndex = i;
+                }
+                if (accountNumbers[i] == receiverAcc)
+                {
+                    receiverIndex = i;
+                }
+            }
+
+            if (senderIndex == -1 || receiverIndex == -1)
+            {
+                Console.WriteLine("One or both account numbers were not found");
+            }
+            else
+            {
+                try
+                {
+                    Console.WriteLine("Enter the transfer amount: ");
+                    double amount = Convert.ToDouble(Console.ReadLine());
+
+                    if (amount <= 0)
+                    {
+                        Console.WriteLine("Transfer amount must be greater than zero.");
+                    }
+                    else if (balances[senderIndex] < amount)
+                    {
+                        Console.WriteLine("Insufficient balance for this transfer.");
+                    }
+                    else
+                    {
+                        balances[senderIndex] = balances[senderIndex] - amount;
+                        balances[receiverIndex] = balances[receiverIndex] + amount;
+
+                        Console.WriteLine("Transfer successful.");
+                        Console.WriteLine("Senders new balance: " + balances[senderIndex]);
+                        Console.WriteLine("Receivers new balance: " + balances[receiverIndex]);
+                    }
+                }
+                catch (FormatException ex)
+                {
+                    Console.WriteLine("Invalid amount entered: " + ex);
+                }
+            }
+
         }
+
         // TODO: write two more void, no-parameter functions here for
         // your own custom services (option 6 and option 7)
+        static void listAllAcc()
+        {
+            if (accountNumbers.Count == 0)
+            {
+                Console.WriteLine("No Account Found");
+                
+            }
+            else
+            {
+                Console.WriteLine("--List of All Acount--");
+                for (int i = 0; i < accountNumbers.Count; i++)
+                {
+                    Console.WriteLine("Name: " + customerNames[i]);
+                    Console.WriteLine("Account number: " + accountNumbers[i]);
+                    Console.WriteLine("Current balance: " + balances[i]);
+                }
+
+            }
+
+        }
+
+        static void CloseAccount()
+        {
+            Console.WriteLine("Enter the account number to close: ");
+            double accNum = Convert.ToDouble(Console.ReadLine());
+
+            int index = -1;
+            for (int i = 0; i < accountNumbers.Count; i++)
+            {
+                if (accountNumbers[i] == accNum)
+                {
+                    index = i;
+                    break;
+                }
+            }
+            if (index == -1)
+            {
+                Console.WriteLine("Account number not found.");
+            }
+            else
+            {
+                Console.WriteLine("Closing account for " + customerNames[index]);
+                Console.WriteLine("with final balance " + balances[index]);
+
+                customerNames.RemoveAt(index);
+                accountNumbers.RemoveAt(index);
+                balances.RemoveAt(index);
+
+                Console.WriteLine("Account closed successfully.");
+            }
+        }
     }
 }
