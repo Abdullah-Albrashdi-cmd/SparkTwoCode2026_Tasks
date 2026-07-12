@@ -1,3 +1,8 @@
 <Solution>
   <Project Path="SP_2-OOP Part 1/SP_2-OOP Part 1.csproj" Id="812c3da7-8334-4a57-8cd3-87aafaf7f4a2" />
+  <Project Path="C# Fundamentals - Mini Compound Project/C# Fundamentals - Mini Compound Project.csproj" Id="ada51153-170e-4593-96ab-fc71f3fe05e4" />
+  <Project Path="SP-1-Session-5-Practice-Task-C#-Fundamentals-Part-5/SP-1-Session-5-Practice-Task-C#-Fundamentals-Part-5.csproj" Id="d9aa915c-bfc0-4167-8acd-326b4d43e063" />
+  <Project Path="SP-1-Session 4-Practice-Task/SP-1-Session 4-Practice-Task.csproj" Id="ee4bebf6-dba8-4b65-a037-4684ba0b07a1" />
+  <Project Path="SP_1 Session 3 Practice Task/SP_1 Session 3 Practice Task.csproj" Id="002a2d40-927b-45ef-a81d-ed331b19a3f5" />
+  <Project Path="Practice Task C# Fundamentals Part 2/Practice Task C# Fundamentals Part 2.csproj" Id="72baf3ac-9cda-4edc-bca6-5d2cd3a3cb15" />
 </Solution>
