@@ -56,6 +56,7 @@
                         break;
                     case 7:
                         // TODO: call your second custom service function here
+                        CloseAccount();
                         break;
                     case 8:
                         exitApp = true;
@@ -294,6 +295,37 @@
 
             }
 
+        }
+
+        static void CloseAccount()
+        {
+            Console.WriteLine("Enter the account number to close: ");
+            double accNum = Convert.ToDouble(Console.ReadLine());
+
+            int index = -1;
+            for (int i = 0; i < accountNumbers.Count; i++)
+            {
+                if (accountNumbers[i] == accNum)
+                {
+                    index = i;
+                    break;
+                }
+            }
+            if (index == -1)
+            {
+                Console.WriteLine("Account number not found.");
+            }
+            else
+            {
+                Console.WriteLine("Closing account for " + customerNames[index]);
+                Console.WriteLine("with final balance " + balances[index]);
+
+                customerNames.RemoveAt(index);
+                accountNumbers.RemoveAt(index);
+                balances.RemoveAt(index);
+
+                Console.WriteLine("Account closed successfully.");
+            }
         }
     }
 }
