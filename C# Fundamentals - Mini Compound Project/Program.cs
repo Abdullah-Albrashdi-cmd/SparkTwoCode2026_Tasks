@@ -151,7 +151,38 @@
         static void WithdrawMoney()
         {
             // TODO: implement this service (see Section 3 requirements)
+            Console.WriteLine("Enter your account number: ");
+            double accnum1 = Convert.ToDouble(Console.ReadLine());
 
+            bool found = false;
+
+            for (int i = 0; i < accountNumbers.Count; i++)
+            {
+                if (accountNumbers[i] == accnum1)
+                {
+                    found = true;
+                    try
+                    {
+                        Console.WriteLine("Enter withdrawal amount: ");
+                        double amount = Convert.ToDouble(Console.ReadLine());
+                        if (amount < 0)
+                        {
+                            Console.WriteLine("Withdrawal amount must be greater than zero.");
+
+                        }
+                        else
+                        {
+                            balances[i] = balances[i] -  amount;
+                            Console.WriteLine("Withdraw successful. New balance: " + balances[i]);
+                        }
+                    }
+                    catch (FormatException ex)
+                    {
+                        Console.WriteLine("Invalid amount entered: " + ex);
+                    }
+                    break;
+                }
+            }
         }
         static void ShowBalance()
         {
