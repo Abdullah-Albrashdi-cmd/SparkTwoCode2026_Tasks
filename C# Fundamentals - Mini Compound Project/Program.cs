@@ -214,6 +214,62 @@
         static void TransferAmount()
         {
             // TODO: implement this service (see Section 3 requirements)
+            Console.WriteLine("Enter the sender's account number: ");
+            double senderAcc = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Enter the receiver's account number: ");
+            double receiverAcc = Convert.ToDouble(Console.ReadLine());
+
+            int senderIndex = -1;
+            int receiverIndex = -1;
+
+            for (int i = 0; i < accountNumbers.Count; i++)
+            {
+                if (accountNumbers[i] == senderAcc)
+                {
+                    senderIndex = i;
+                }
+                if (accountNumbers[i] == receiverAcc)
+                {
+                    receiverIndex = i;
+                }
+            }
+
+            if (senderIndex == -1 || receiverIndex == -1)
+            {
+                Console.WriteLine("One or both account numbers were not found");
+            }
+            else
+            {
+                try
+                {
+                    Console.WriteLine("Enter the transfer amount: ");
+                    double amount = Convert.ToDouble(Console.ReadLine());
+
+                    if (amount <= 0)
+                    {
+                        Console.WriteLine("Transfer amount must be greater than zero.");
+                    }
+                    else if (balances[senderIndex] < amount)
+                    {
+                        Console.WriteLine("Insufficient balance for this transfer.");
+                    }
+                    else
+                    {
+                        balances[senderIndex] = balances[senderIndex] - amount;
+                        balances[receiverIndex] = balances[receiverIndex] + amount;
+
+                        Console.WriteLine("Transfer successful.");
+                        Console.WriteLine("Senders new balance: " + balances[senderIndex]);
+                        Console.WriteLine("Receivers new balance: " + balances[receiverIndex]);
+                    }
+                }
+                catch (FormatException ex)
+                {
+                    Console.WriteLine("Invalid amount entered: " + ex);
+                }
+            }
+
         }
         // TODO: write two more void, no-parameter functions here for
         // your own custom services (option 6 and option 7)
