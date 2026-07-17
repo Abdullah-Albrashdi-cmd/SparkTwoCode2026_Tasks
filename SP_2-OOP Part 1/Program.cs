@@ -62,8 +62,48 @@
                 Console.WriteLine("Registration email sent to " + Name);
             }
         }
+        class Project
+        {
+            public string ProductName;
+            public double Price;
+            public int StockQuantity;
 
-        
+            public void Sell(int quantity)
+            {
+                if (StockQuantity < quantity)
+                {
+                    StockQuantity -= quantity;
+
+                }
+                else
+                {
+                    Console.WriteLine("not enough stock");
+                }
+                LogTransaction();
+            }
+
+            public void Restock(int quantity)
+            {
+
+            }
+
+            public double GetInventoryValue()
+            {
+                return StockQuantity;
+            }
+
+            private void PrintDetails()
+            {
+
+            }
+
+            private void LogTransaction()
+            {
+
+            }
+        }
+
+
         static void Main(string[] args)
         {
             
