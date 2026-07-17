@@ -84,7 +84,8 @@
 
             public void Restock(int quantity)
             {
-
+                StockQuantity += quantity;
+                LogTransaction();
             }
 
             public double GetInventoryValue()
