@@ -62,7 +62,7 @@
                 Console.WriteLine("Registration email sent to " + Name);
             }
         }
-        class Project
+        class Product
         {
             public string ProductName;
             public double Price;
@@ -90,17 +90,21 @@
 
             public double GetInventoryValue()
             {
-                return StockQuantity;
+                PrintDetails();
+                return Price * StockQuantity;
             }
 
             private void PrintDetails()
             {
-
+                Console.WriteLine("Product Name: " + ProductName);
+                Console.WriteLine("Price: " + Price);
+                Console.WriteLine("Stock Quantity: " + StockQuantity);
+                
             }
 
             private void LogTransaction()
             {
-
+                Console.WriteLine("Transaction being logged for "+ProductName);
             }
         }
 
