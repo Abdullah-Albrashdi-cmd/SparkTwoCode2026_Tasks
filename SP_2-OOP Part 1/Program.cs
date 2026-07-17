@@ -38,9 +38,32 @@
 
             private void SendEmail()
             {
-                Console.WriteLine("Email sent to " + HolderName + ".");
+                Console.WriteLine("Email sent to " + HolderName );
             }
         }
+
+        class Student
+        {
+            public int Grade { get; set; }
+            public string Name { get; set; }
+            public string Address { get; set; }
+            private string email {  get; set; }
+            private int age { get; set; }
+            
+            public void Register(string Email)
+            {
+                email = Email;
+                SendEmail();
+
+            }
+
+            private void SendEmail()
+            {
+                Console.WriteLine("Registration email sent to " + Name);
+            }
+        }
+
+        
         static void Main(string[] args)
         {
             
