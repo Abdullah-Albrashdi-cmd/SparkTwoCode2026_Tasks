@@ -16,6 +16,12 @@
                 Balance = balance;
             }
 
+            // Case 18
+            public bool IsOverdrawn
+            {
+                get { return Balance < 0; }
+            }
+
             public BankAccount()
             {
             }
@@ -633,6 +639,20 @@
             {
                 int total = Student.GetStudentCount();
                 Console.WriteLine("Total students created: " + total);
+            }
+
+            //Case 18 - Overdrawn Account Check [Read-Only Property]
+            static void Case18OverdrawnAccountCheck(BankAccount acct1, BankAccount acct2)
+            {
+                BankAccount chosen = ChooseAccount(acct1, acct2);
+                if (chosen.IsOverdrawn)
+                {
+                    Console.WriteLine("This account is currently overdrawn");
+                }
+                else
+                {
+                    Console.WriteLine("This account is not overdrawn");
+                }
             }
 
         }
