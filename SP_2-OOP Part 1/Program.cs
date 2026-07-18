@@ -370,6 +370,16 @@
 
             }
 
+            //Case 3 - Make a Deposit
+            static void Case3MakeDeposit(BankAccount acc1,  BankAccount acc2)
+            {
+                BankAccount chose = ChooseAccount(acc1 , acc2) ;
+                double amount = GetDoubleInput("Enter deposet amount: ");
+                chose.Deposit(amount);
+                Console.WriteLine(chose.HolderName + " updated balance: " + chose.Balance);
+
+            }
+
 
         }
     }
