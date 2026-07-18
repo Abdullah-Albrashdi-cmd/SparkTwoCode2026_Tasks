@@ -578,6 +578,25 @@
                 }
             }
 
+            //Case 15 - Full Balance Top-Up Flow
+            static void Case15FullBalanceTopUp(BankAccount account1, BankAccount account2)
+            {
+                BankAccount chosen = ChooseAccount(account1, account2);
+
+                if (chosen.Balance < 50)
+                {
+                    double before = chosen.Balance;
+                    double topUp = 100 - chosen.Balance;
+                    chosen.Deposit(topUp);
+                    Console.WriteLine("Balance before top-up: " + before);
+                    Console.WriteLine("Balance after top-up: " + chosen.Balance);
+                }
+                else
+                {
+                    Console.WriteLine("No top-up needed balance is already 50 or above");
+                }
+            }
+
         }
     }
 }
