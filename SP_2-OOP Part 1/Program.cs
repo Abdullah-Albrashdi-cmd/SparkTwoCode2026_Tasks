@@ -380,6 +380,14 @@
 
             }
 
+            //Case 4 - Make a Withdrawal
+            static void Case4MakeWithdrawal(BankAccount acc1, BankAccount acc2) 
+            {
+                BankAccount chose = ChooseAccount(acc1, acc2);
+                double amount = GetDoubleInput("Enter withdrawal amount: ");
+                chose.Withdraw(amount);
+                Console.WriteLine("Updated balance: " + chose.Balance);
+            }
 
         }
     }
