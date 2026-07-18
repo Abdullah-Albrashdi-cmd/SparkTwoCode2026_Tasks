@@ -389,6 +389,16 @@
                 Console.WriteLine("Updated balance: " + chose.Balance);
             }
 
+            //Case 5 - View Product Details
+            static void Case5ViewProductDetails(Product product1, Product product2)
+            {
+                Product chose = ChooseProduct(product1, product2);
+                double val = chose.GetInventoryValue();
+                Console.WriteLine("total invatory value: " + val);
+            }
+
+
+
         }
     }
 }
