@@ -548,6 +548,36 @@
                 double revenue = quantity * chosen.Price;
                 Console.WriteLine("Sale complete, total revenue: " + revenue);
             }
+
+            //Case 14 - Scholarship Eligibility Check
+            static void Case14ScholarshipEligibility(Student student1, Student student2, BankAccount account1, BankAccount account2)
+            {
+                Console.WriteLine("Choose student to check:");
+                Student chosenStudent = ChooseStudent(student1, student2);
+                Console.WriteLine("Choose account to check:");
+                BankAccount chosenAccount = ChooseAccount(account1, account2);
+
+                bool gradeOk = chosenStudent.Grade >= 80;
+                bool balanceOk = chosenAccount.Balance >= 100;
+
+                if (gradeOk && balanceOk)
+                {
+                    Console.WriteLine("eligible");
+                }
+                else if (!gradeOk && !balanceOk)
+                {
+                    Console.WriteLine("Not eligible grade is below 80 and balance is below 100");
+                }
+                else if (!gradeOk)
+                {
+                    Console.WriteLine("Not eligible grade is below 80");
+                }
+                else
+                {
+                    Console.WriteLine("Not eligible balance is below 100");
+                }
+            }
+
         }
     }
 }
