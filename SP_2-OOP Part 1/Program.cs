@@ -68,7 +68,7 @@
             private string email;
             private int age;
 
-            // Case 17 - static field and static method
+            // Case 17
             private static int studentCount = 0;
 
             public Student(string name, string address, int grade)
@@ -83,6 +83,12 @@
                 return studentCount;
             }
 
+            // Case 19
+            private int pin;
+            public int Pin
+            {
+                set { pin = value; }
+            }
 
             public void Register(string Email)
             {
@@ -653,6 +659,22 @@
                 {
                     Console.WriteLine("This account is not overdrawn");
                 }
+            }
+
+            //Case 19 - Set Student Security PIN [Write-Only Property]
+            static void Case19SetStudentPin(Student std1, Student std2)
+            {
+                Student chosen = ChooseStudent(std1, std2);
+                int newPin = GetIntInput("Enter a 4 digit pin: ");
+
+                if (newPin < 1000 || newPin > 9999)
+                {
+                    Console.WriteLine("Invalid pin must be exactly 4 digits");
+                    return;
+                }
+
+                chosen.Pin = newPin;
+                Console.WriteLine("PIN set successfully for " + chosen.Name );
             }
 
         }
