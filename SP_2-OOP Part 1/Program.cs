@@ -44,11 +44,20 @@
 
         class Student
         {
-            public int Grade { get; set; }
-            public string Name { get; set; }
-            public string Address { get; set; }
-            private string email {  get; set; }
-            private int age { get; set; }
+            public int Grade;
+            public string Name;
+            public string Address;
+            private string email;
+            private int age;
+
+            public Student(string name, string adds, int grade) 
+            {
+                Name = name;
+                Address = adds;
+                Grade = grade;
+
+            }
+
             
             public void Register(string Email)
             {
@@ -109,9 +118,35 @@
         }
 
 
+
+
         static void Main(string[] args)
         {
-            
+            BankAccount account1 = new BankAccount();
+            account1.AccountNumber = 1163;
+            account1.HolderName = "karim";
+            account1.Balance = 120;
+
+            BankAccount account2 = new BankAccount();
+            account2.AccountNumber = 15203;
+            account2.HolderName = "Ali";
+            account2.Balance = 63;
+
+            Student student1 = new Student("Ali", "Muscat", 65);
+            Student student2 = new Student("Ahmed", "Muscat", 70);
+
+            Product product1 = new Product();
+            product1.ProductName = "Wireless Mouse";
+            product1.Price = 5.500;
+            product1.StockQuantity = 50;
+
+            Product product2 = new Product();
+            product2.ProductName = "Mechanical Keyboard";
+            product2.Price = 15.750;
+            product2.StockQuantity = 20;
+
+
+
         }
     }
 }
