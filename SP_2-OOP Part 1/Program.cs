@@ -674,7 +674,7 @@
                 }
 
                 chosen.Pin = newPin;
-                Console.WriteLine("PIN set successfully for " + chosen.Name );
+                Console.WriteLine("PIN set successfully for " + chosen.Name);
             }
 
         }
