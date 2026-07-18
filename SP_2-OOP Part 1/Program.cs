@@ -530,6 +530,24 @@
                     Console.WriteLine("Status: premium");
                 }
             }
+
+            //Case 13 - Bulk Sale With Revenue Calculation
+            static void Case13BulkSale(Product prodt1, Product prodt2)
+            {
+                Product chosen = ChooseProduct(prodt1, prodt2);
+                int quantity = GetIntInput("Enter quantity to sell: ");
+
+                if (chosen.StockQuantity < quantity)
+                {
+                    int needed = quantity - chosen.StockQuantity;
+                    Console.WriteLine("Not enough stock you need " + needed + " more units to fulfill order");
+                    return;
+                }
+
+                chosen.Sell(quantity);
+                double revenue = quantity * chosen.Price;
+                Console.WriteLine("Sale complete, total revenue: " + revenue);
+            }
         }
     }
 }
