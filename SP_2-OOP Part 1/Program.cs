@@ -465,8 +465,31 @@
                 }
             }
 
+            //Case 10 - Update Student Grade (Validated)
+            static void Case10UpdateStudentGrade(Student student1, Student student2)
+            {
+                Student chose = ChooseStudent(student1, student2);
+                string input = GetStringInput("Enter new grade: ");
+                int newGrade;
+                bool isNumber = int.TryParse(input, out newGrade);
 
-        }
+                if (!isNumber)
+                {
+                    Console.WriteLine("Invalid grade no change made");
+                    return;
+                }
+
+                if (newGrade < 0 || newGrade > 100)
+                {
+                    Console.WriteLine("Invalid grade, grade must be between 0 and 100, no change made.");
+                    return;
+                }
+
+                chose.Grade = newGrade;
+                Console.WriteLine("Grade updated successfully to " + chose.Grade);
+
+
+            }
     }
 }
     
