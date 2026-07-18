@@ -397,7 +397,14 @@
                 Console.WriteLine("total invatory value: " + val);
             }
 
-
+            //Case 6 - Register a Student
+            static void Case6RegisterStudent(Student s1, Student s2)
+            {
+                Student chose = ChooseStudent(s1, s2);
+                string em = GetStringInput("Enter an emai to register: ");
+                chose.Register(em);
+                Console.WriteLine(chose.Name + " has registered successfully");
+            }
 
         }
     }
