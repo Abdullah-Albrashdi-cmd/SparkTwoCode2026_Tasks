@@ -9,6 +9,18 @@
             public string HolderName { get; set; }
             public double Balance { get; set; }
 
+            public BankAccount(int accountNumber, string holderName, double balance)
+            {
+                AccountNumber = accountNumber;
+                HolderName = holderName;
+                Balance = balance;
+            }
+
+            public BankAccount()
+            {
+            }
+            
+
             public void Deposit(double amount)
             {
                 Balance += amount;
@@ -596,6 +608,20 @@
                     Console.WriteLine("No top-up needed balance is already 50 or above");
                 }
             }
+
+            //Case 16 - Quick Account Opening [Parameterized Constructor]
+            static void Case16QuickAccountOpening()
+            {
+                int accountNumber = GetIntInput("Enter new account number: ");
+                string holderName = GetStringInput("Enter holder name: ");
+                double startingBalance = GetDoubleInput("Enter starting balance: ");
+
+                BankAccount newAccount = new BankAccount(accountNumber, holderName, startingBalance);
+                Console.WriteLine("New account created");
+                newAccount.CheckBalance();
+            }
+
+
 
         }
     }
