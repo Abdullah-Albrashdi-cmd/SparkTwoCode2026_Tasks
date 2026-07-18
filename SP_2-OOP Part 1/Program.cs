@@ -406,6 +406,23 @@
                 Console.WriteLine(chose.Name + " has registered successfully");
             }
 
+            //Case 7 - Compare Two Account Balances
+            static void Case7CompareBalances(BankAccount account1, BankAccount account2)
+            {
+                if (account1.Balance > account2.Balance)
+                {
+                    Console.WriteLine(account1.HolderName + " holds more money");
+                }
+                else if (account2.Balance > account1.Balance)
+                {
+                    Console.WriteLine(account2.HolderName + " holds more money");
+                }
+                else
+                {
+                    Console.WriteLine("both accounts hold equal balance");
+                }
+            }
+
         }
     }
 }
