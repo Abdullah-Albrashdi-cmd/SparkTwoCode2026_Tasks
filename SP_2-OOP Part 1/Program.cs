@@ -62,15 +62,22 @@
             private string email;
             private int age;
 
-            public Student(string name, string adds, int grade) 
+            // Case 17 - static field and static method
+            private static int studentCount = 0;
+
+            public Student(string name, string address, int grade)
             {
                 Name = name;
-                Address = adds;
+                Address = address;
                 Grade = grade;
-
+                studentCount = studentCount + 1;
+            }
+            public static int GetStudentCount()
+            {
+                return studentCount;
             }
 
-            
+
             public void Register(string Email)
             {
                 email = Email;
@@ -621,7 +628,12 @@
                 newAccount.CheckBalance();
             }
 
-
+            //Case 17 - Total Students Counter [Static Fields & Methods]
+            static void Case17TotalStudentsCounter()
+            {
+                int total = Student.GetStudentCount();
+                Console.WriteLine("Total students created: " + total);
+            }
 
         }
     }
