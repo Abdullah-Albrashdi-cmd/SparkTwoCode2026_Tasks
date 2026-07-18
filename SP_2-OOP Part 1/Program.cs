@@ -511,6 +511,25 @@
                 Console.WriteLine("Grade: " + chosen.Grade);
                 Console.WriteLine("Status: " + status);
             }
+
+            //Case 12 - Account Health Status
+            static void Case12AccountHealthStatus(BankAccount acct1, BankAccount acct2)
+            {
+                BankAccount chose = ChooseAccount(acct1, acct2);
+
+                if (chose.Balance < 50)
+                {
+                    Console.WriteLine("Status: low balance");
+                }
+                else if (chose.Balance <= 1000)
+                {
+                    Console.WriteLine("Status: healthy");
+                }
+                else
+                {
+                    Console.WriteLine("Status: premium");
+                }
+            }
         }
     }
 }
