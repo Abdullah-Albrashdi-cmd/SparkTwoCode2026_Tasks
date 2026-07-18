@@ -444,6 +444,27 @@
                 }
             }
 
+            //Case 9 - Transfer Between Accounts
+            static void Case9TransferBetweenAccounts(BankAccount account1, BankAccount account2)
+            {
+                Console.WriteLine("Choose the source account:");
+                BankAccount source = ChooseAccount(account1, account2);
+                Console.WriteLine("Choose the distnation account:");
+                BankAccount destination = ChooseAccount(account1, account2);
+                double amount = GetDoubleInput("Enter transfer amount: ");
+
+                if (source.Balance >= amount)
+                {
+                    source.Withdraw(amount);
+                    destination.Deposit(amount);
+                    Console.WriteLine("Transfer successful");
+                }
+                else
+                {
+                    Console.WriteLine("Transfer failed");
+                }
+            }
+
 
         }
     }
