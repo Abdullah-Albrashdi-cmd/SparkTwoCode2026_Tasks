@@ -224,7 +224,7 @@
 
                 Console.WriteLine();
             }
-            
+
 
             static void PrintMenu()
             {
@@ -361,19 +361,19 @@
             }
 
             //Case 2 - Update Student Address
-            static void Case2UpdateStudentAddress(Student st1,  Student st2)
+            static void Case2UpdateStudentAddress(Student st1, Student st2)
             {
                 Student chose = ChooseStudent(st1, st2);
                 string newAdds = GetStringInput("Enter new address: ");
                 chose.Address = newAdds;
-                Console.WriteLine("Addres updated. The new addres for "+chose.Name+"is: "+chose.Address);
+                Console.WriteLine("Addres updated. The new addres for " + chose.Name + "is: " + chose.Address);
 
             }
 
             //Case 3 - Make a Deposit
-            static void Case3MakeDeposit(BankAccount acc1,  BankAccount acc2)
+            static void Case3MakeDeposit(BankAccount acc1, BankAccount acc2)
             {
-                BankAccount chose = ChooseAccount(acc1 , acc2) ;
+                BankAccount chose = ChooseAccount(acc1, acc2);
                 double amount = GetDoubleInput("Enter deposet amount: ");
                 chose.Deposit(amount);
                 Console.WriteLine(chose.HolderName + " updated balance: " + chose.Balance);
@@ -381,7 +381,7 @@
             }
 
             //Case 4 - Make a Withdrawal
-            static void Case4MakeWithdrawal(BankAccount acc1, BankAccount acc2) 
+            static void Case4MakeWithdrawal(BankAccount acc1, BankAccount acc2)
             {
                 BankAccount chose = ChooseAccount(acc1, acc2);
                 double amount = GetDoubleInput("Enter withdrawal amount: ");
@@ -490,6 +490,28 @@
 
 
             }
+
+            //Case 11 - Student Report Card
+            static void Case11StudentReportCard(Student std1, Student std2)
+            {
+                Student chosen = ChooseStudent(std1, std2);
+                string status;
+                if (chosen.Grade >= 60)
+                {
+                    status = "Pass";
+                }
+                else
+                {
+                    status = "Fail";
+                }
+
+                Console.WriteLine("--Report Card--");
+                Console.WriteLine("Name: " + chosen.Name);
+                Console.WriteLine("Address: " + chosen.Address);
+                Console.WriteLine("Grade: " + chosen.Grade);
+                Console.WriteLine("Status: " + status);
+            }
+        }
     }
 }
     
