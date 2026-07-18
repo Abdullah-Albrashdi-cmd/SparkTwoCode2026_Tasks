@@ -150,7 +150,9 @@
             while (running)
             {
                 PrintMenu();
+
                 int choice = GetIntInput("Enter your choice: ");
+
 
                 switch (choice)
                 {
@@ -222,6 +224,7 @@
 
                 Console.WriteLine();
             }
+            
 
             static void PrintMenu()
             {
@@ -235,22 +238,137 @@
                 Console.WriteLine(" 7. Compare Two Account Balances");
                 Console.WriteLine(" 8. Restock Product & Stock Level Check");
                 Console.WriteLine(" 9. Transfer Between Accounts");
-                Console.WriteLine("10. Update Student Grade (Validated)");
+                Console.WriteLine("10. Update Student Grade ");
                 Console.WriteLine("11. Student Report Card");
                 Console.WriteLine("12. Account Health Status");
                 Console.WriteLine("13. Bulk Sale With Revenue Calculation");
                 Console.WriteLine("14. Scholarship Eligibility Check");
-                Console.WriteLine("15. Full Balance Top-Up Flow");
-                Console.WriteLine("16. Quick Account Opening (Parameterized Constructor)");
-                Console.WriteLine("17. Total Students Counter (Static)");
-                Console.WriteLine("18. Overdrawn Account Check (Read-Only Property)");
-                Console.WriteLine("19. Set Student Security PIN (Write-Only Property)");
+                Console.WriteLine("15. Full Balance ");
+                Console.WriteLine("16. Quick Account Opening ");
+                Console.WriteLine("17. Total Students Counter");
+                Console.WriteLine("18. Overdrawn Account Check");
+                Console.WriteLine("19. Set Student Security PIN");
                 Console.WriteLine("20. Exit");
                 Console.WriteLine("----------------------------------------------------");
             }
 
+            //Input functions
+
+            static int GetIntInput(string prompt)
+            {
+                Console.Write(prompt);
+                string input = Console.ReadLine();
+                int result;
+                bool success = int.TryParse(input, out result);
+                if (!success)
+                {
+                    Console.WriteLine("not a valid whole number");
+                    return -1;
+                }
+                return result;
+            }
+
+            static double GetDoubleInput(string prompt)
+            {
+                Console.Write(prompt);
+                string input = Console.ReadLine();
+                double result;
+                bool success = double.TryParse(input, out result);
+                if (!success)
+                {
+                    Console.WriteLine("not a valid number");
+                    return -1;
+                }
+                return result;
+            }
+
+            static string GetStringInput(string prompt)
+            {
+                Console.Write(prompt);
+                return Console.ReadLine();
+            }
+
+            //Chooses functions
+
+            static BankAccount ChooseAccount(BankAccount account1, BankAccount account2)
+            {
+                Console.WriteLine("1. Account " + account1.AccountNumber + " (" + account1.HolderName + ")");
+                Console.WriteLine("2. Account " + account2.AccountNumber + " (" + account2.HolderName + ")");
+                int pick = GetIntInput("Choose an account (1 or 2): ");
+
+                if (pick == 1)
+                {
+                    return account1;
+                }
+                else if (pick == 2)
+                {
+                    return account2;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid pick");
+                    return account1;
+                }
+            }
+
+            static Student ChooseStudent(Student student1, Student student2)
+            {
+                Console.WriteLine("1. Student " + student1.Name);
+                Console.WriteLine("2. Student " + student2.Name);
+                int pick = GetIntInput("Choose a student (1 or 2): ");
+
+                if (pick == 1)
+                {
+                    return student1;
+                }
+                else if (pick == 2)
+                {
+                    return student2;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid pick");
+                    return student1;
+                }
+            }
+
+            static Product ChooseProduct(Product product1, Product product2)
+            {
+                Console.WriteLine("1. " + product1.ProductName);
+                Console.WriteLine("2. " + product2.ProductName);
+                int pick = GetIntInput("Choose a product (1 or 2): ");
+
+                if (pick == 1)
+                {
+                    return product1;
+                }
+                else if (pick == 2)
+                {
+                    return product2;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid pick");
+                    return product1;
+                }
+            }
 
             //Case 1 - View Account Details
+            static void Case1ViewAccountDetails(BankAccount account1, BankAccount account2)
+            {
+                BankAccount chose = ChooseAccount(account1, account2);
+                chose.CheckBalance();
+            }
+
+            //Case 2 - Update Student Address
+            static void Case2UpdateStudentAddress(Student st1,  Student st2)
+            {
+                Student chose = ChooseStudent(st1, st2);
+                string newAdds = GetStringInput("Enter new address: ");
+                chose.Address = newAdds;
+                Console.WriteLine("Addres updated. The new addres for "+chose.Name+"is: "+chose.Address);
+
+            }
 
 
         }
