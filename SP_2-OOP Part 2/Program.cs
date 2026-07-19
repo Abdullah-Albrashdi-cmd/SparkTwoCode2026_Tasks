@@ -100,8 +100,31 @@
                 Console.WriteLine("================================================");
                 Console.Write("Enter your choice: ");
 
-                
+                string choice = Console.ReadLine();
+                Console.WriteLine("");
+
+                switch (choice)
+                {
+                    case "1": AddNewRoom(rooms); break;
+                    case "2": RegisterNewGuest(guests); break;
+                    case "3": BookRoom(guests, rooms); break;
+                    case "4": ViewAllRooms(rooms); break;
+                    case "5": ViewAllGuests(guests); break;
+                    case "6": SearchFilterRooms(rooms); break;
+                    case "7": GuestBookingStatistics(guests, rooms); break;
+                    case "8": UpdateRoomPrice(rooms); break;
+                    case "9": GuestLookupByName(guests); break;
+                    case "10": RoomTypeBreakdown(rooms); break;
+                    case "11": CheckOutGuest(guests, rooms); break;
+                    case "12": RemoveUnavailableRooms(rooms, guests); break;
+                    case "13": ExtendGuestStay(guests, rooms); break;
+                    case "14": HighestRevenueBooking(guests, rooms); break;
+                    case "15": GuestPagination(guests); break;
+                    case "0": running = false; Console.WriteLine("Thankyou"); break;
+                    default: Console.WriteLine("Invalid choice, please try again"); break;
+                }
             }
+        
         }
     }
 }
