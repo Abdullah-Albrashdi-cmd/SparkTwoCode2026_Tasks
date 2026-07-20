@@ -110,7 +110,7 @@
                     //case "3": BookRoom(guests, rooms); break;
                     //case "4": ViewAllRooms(rooms); break;
                     //case "5": ViewAllGuests(guests); break;
-                    //case "6": SearchFilterRooms(rooms); break;
+                    case "6": SearchFilterRooms(rooms); break;
                     //case "7": GuestBookingStatistics(guests, rooms); break;
                     //case "8": UpdateRoomPrice(rooms); break;
                     //case "9": GuestLookupByName(guests); break;
@@ -273,9 +273,127 @@
                 Console.WriteLine("Guest ID: " + guestId + " | Name: " + name + " | Check-in: " + checkInD + " | Nights: " + numOfN);
             }
 
+            //Case 03 Book a Room for a Guest 
+
+            //Case 06 Search & Filter Rooms
+            static void SearchFilterRooms(List<Room> rooms)
+            {
+                bool back = false;
+                while (!back)
+                {
+                    Console.WriteLine("Filter rooms menu");
+                    Console.WriteLine("1. Show all available rooms");
+                    Console.WriteLine("2. Filter by room type");
+                    Console.WriteLine("3. Filter by max price");
+                    Console.WriteLine("4. Room price statistics");
+                    Console.WriteLine("0. Back");
+                    Console.Write("Enter your choice: ");
+                    string subChoice = Console.ReadLine();
+
+                    if (subChoice == "1")
+                    {
+                        List<Room> available = rooms.Where(r => r.isAvailable).OrderBy(r => r.pricePerNight).ToList();
+                        Console.WriteLine("Matches found: " + available.Count());
+                        if (available.Count == 0)
+                        {
+                            Console.WriteLine("No rooms found ");
+                        }
+                        else
+                        {
+                            foreach (Room r in available)
+                            {
+                                r.displayRoom();
+                            }
+                        }
+                    }
+                    else if (subChoice == "2")
+                    {
+                        Console.Write("Enter room type to filter by: ");
+                        string type = Console.ReadLine();
+
+                        List<Room> filtered = rooms.Where(r => r.roomType.ToLower() == type.ToLower()).ToList();
+                        Console.WriteLine("Matches found: " + filtered.Count());
+                        if (filtered.Count == 0)
+                        {
+                            Console.WriteLine("No rooms found for the selected criteria ");
+                        }
+                        else
+                        {
+                            foreach (Room r in filtered)
+                            {
+                                r.displayRoom();
+                            }
+                        }
+                    }
+                    else if (subChoice == "3")
+                    {
+                        double maxPrice = 0;
+                        bool validPrice = false;
+                        while (!validPrice)
+                        {
+                            Console.Write("Enter maximum price: ");
+                            string input = Console.ReadLine();
+                            bool parsed = double.TryParse(input, out maxPrice);
+                            if (parsed && maxPrice > 0)
+                            {
+                                validPrice = true;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Please enter a valid positive number");
+                            }
+                        }
+
+                        List<Room> filtered = rooms.Where(r => r.isAvailable && r.pricePerNight <= maxPrice).OrderBy(r => r.pricePerNight).ToList();
+                        Console.WriteLine("Matches found: " + filtered.Count());
+                        if (filtered.Count == 0)
+                        {
+                            Console.WriteLine("No rooms foundfor the selected criteria.");
+                        }
+                        else
+                        {
+                            foreach (Room r in filtered)
+                            {
+                                r.displayRoom();
+                            }
+                        }
+                    }
+                    else if (subChoice == "4")
+                    {
+                        if (rooms.Count == 0)
+                        {
+                            Console.WriteLine("No rooms found for the selected criteria.");
+                        }
+                        else
+                        {
+                            int totalRooms = rooms.Count();
+                            int availableRooms = rooms.Count(r => r.isAvailable);
+                            
+                            double avgPrice = rooms.Average(r => r.pricePerNight);
+                            double minPrice = rooms.Min(r => r.pricePerNight);
+                            double maxPriceValue = rooms.Max(r => r.pricePerNight);
+
+                            Console.WriteLine("Total rooms: " + totalRooms);
+                            Console.WriteLine("Available rooms: " + availableRooms);
+                            Console.WriteLine("Average price: OMR " + Math.Round(avgPrice, 2));
+                            Console.WriteLine("Cheapest price: OMR " + Math.Round(minPrice, 2));
+                            Console.WriteLine("Most expensive price: OMR " + Math.Round(maxPriceValue, 2));
+                        }
+                    }
+                    else if (subChoice == "0")
+                    {
+                        back = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid choice, try again");
+                    }
+                }
+            }
+
+
+
 
         }
-
-        
     }
 }
