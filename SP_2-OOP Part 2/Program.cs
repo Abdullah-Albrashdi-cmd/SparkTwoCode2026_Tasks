@@ -124,7 +124,77 @@
                     default: Console.WriteLine("Invalid choice, please try again"); break;
                 }
             }
-        
+
+            //Case 01 Add New Room
+            static void AddNewRoom(List<Room> rooms)
+            {
+                Console.WriteLine("Add New Room");
+
+                int roomNumber = 0;
+                bool validRoomNumber = false;
+                while (!validRoomNumber)
+                {
+                    Console.Write("Enter room number: ");
+                    string input = Console.ReadLine();
+                    bool parsed = int.TryParse(input, out roomNumber);
+                    if (parsed && roomNumber > 0)
+                    {
+                        validRoomNumber = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("pleas enter a valid positive whole number");
+                    }
+                }
+
+                string roomType = "";
+                bool validType = false;
+                while (!validType)
+                {
+                    Console.Write("Enter room type (Single/Double/Suite): ");
+                    roomType = Console.ReadLine();
+                    if (!string.IsNullOrWhiteSpace(roomType))
+                    {
+                        validType = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Input cannot be empty please try again");
+                    }
+                }
+
+                double price = 0;
+                bool validPrice = false;
+                while (!validPrice)
+                {
+                    Console.Write("Enter price per night: ");
+                    string input = Console.ReadLine();
+                    bool parsed = double.TryParse(input, out price);
+                    if (parsed && price > 0)
+                    {
+                        validPrice = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Please enter a valid positive number");
+                    }
+                }
+
+                bool exists = rooms.Any(r => r.roomNumber == roomNumber);
+                if (exists)
+                {
+                    Console.WriteLine("Error: room with number " + roomNumber + " already exists");
+                    return;
+                }
+
+                Room newRoom = new Room(roomNumber, roomType, price, true);
+                rooms.Add(newRoom);
+
+                Console.WriteLine("Room added successfully");
+                Console.WriteLine("Room Number: " + roomNumber + " | Type: " + roomType + " | Price: OMR " + price);
+                Console.WriteLine("Total rooms now: " + rooms.Count);
+            }
+
         }
     }
 }
