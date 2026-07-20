@@ -391,6 +391,27 @@
                 }
             }
 
+            //Case 09 Guest Lookup by Name
+            static void GuestLookupByName(List<Guest> guests)
+            {
+                Console.Write("Enter name or partial name: ");
+                string search = Console.ReadLine();
+
+                List<Guest> matches = guests.Where(g => g.guestName.ToLower().Contains(search.ToLower())).ToList();
+
+                Console.WriteLine("Matches found: " + matches.Count());
+                if (matches.Count == 0)
+                {
+                    Console.WriteLine("No guests matched that search.");
+                    return;
+                }
+
+                foreach (Guest g in matches)
+                {
+                    Console.WriteLine(g.guestId + " | " + g.guestName + " | Room: " + g.roomNumber);
+                }
+            }
+
 
 
 
