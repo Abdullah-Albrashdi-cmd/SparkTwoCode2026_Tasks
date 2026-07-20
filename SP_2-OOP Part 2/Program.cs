@@ -107,19 +107,19 @@
                 {
                     case "1": AddNewRoom(rooms); break;
                     case "2": RegisterNewGuest(guests); break;
-                    case "3": BookRoom(guests, rooms); break;
-                    case "4": ViewAllRooms(rooms); break;
-                    case "5": ViewAllGuests(guests); break;
-                    case "6": SearchFilterRooms(rooms); break;
-                    case "7": GuestBookingStatistics(guests, rooms); break;
-                    case "8": UpdateRoomPrice(rooms); break;
-                    case "9": GuestLookupByName(guests); break;
-                    case "10": RoomTypeBreakdown(rooms); break;
-                    case "11": CheckOutGuest(guests, rooms); break;
-                    case "12": RemoveUnavailableRooms(rooms, guests); break;
-                    case "13": ExtendGuestStay(guests, rooms); break;
-                    case "14": HighestRevenueBooking(guests, rooms); break;
-                    case "15": GuestPagination(guests); break;
+                    //case "3": BookRoom(guests, rooms); break;
+                    //case "4": ViewAllRooms(rooms); break;
+                    //case "5": ViewAllGuests(guests); break;
+                    //case "6": SearchFilterRooms(rooms); break;
+                    //case "7": GuestBookingStatistics(guests, rooms); break;
+                    //case "8": UpdateRoomPrice(rooms); break;
+                    //case "9": GuestLookupByName(guests); break;
+                    //case "10": RoomTypeBreakdown(rooms); break;
+                    //case "11": CheckOutGuest(guests, rooms); break;
+                    //case "12": RemoveUnavailableRooms(rooms, guests); break;
+                    //case "13": ExtendGuestStay(guests, rooms); break;
+                    //case "14": HighestRevenueBooking(guests, rooms); break;
+                    //case "15": GuestPagination(guests); break;
                     case "0": running = false; Console.WriteLine("Thankyou"); break;
                     default: Console.WriteLine("Invalid choice, please try again"); break;
                 }
@@ -128,7 +128,6 @@
             //Case 01 Add New Room
             static void AddNewRoom(List<Room> rooms)
             {
-                Console.WriteLine("Add New Room");
 
                 int roomNumber = 0;
                 bool validRoomNumber = false;
@@ -195,6 +194,88 @@
                 Console.WriteLine("Total rooms now: " + rooms.Count);
             }
 
+            //Case 02 Register New Guest 
+            static void RegisterNewGuest(List<Guest> guests)
+            {
+                string name = "";
+                bool valname = false;
+
+                while (!valname)
+                {
+                    Console.WriteLine("Enter your name: ");
+                    name = Console.ReadLine();
+                    
+                    if (name != null)
+                    {
+                        valname = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid input, try again");
+                    }
+                }
+
+                string checkInD = "";
+                bool valdate = false;
+
+                while (!valdate)
+                {
+                    Console.WriteLine("Enter check in date: ");
+                    checkInD = Console.ReadLine();
+                    if (checkInD != null)
+                    {
+                        valdate = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalied input, try again");
+
+                    }
+                }
+
+                int numOfN = 0;
+                bool checkNum = false;
+
+                while (!checkNum)
+                {
+                    Console.WriteLine("Enter number of nights: ");
+                    numOfN = Convert.ToInt32(Console.ReadLine());
+                    if (numOfN != 0)
+                    {
+                        checkNum = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("please enter valid positive number");
+
+                    }
+                }
+
+                int nextNumber = guests.Count + 1;
+                string guestId;
+                if (nextNumber < 10)
+                {
+                    guestId = "G00" + nextNumber;
+                }
+                else if (nextNumber < 100)
+                {
+                    guestId = "G0" + nextNumber;
+                }
+                else
+                {
+                    guestId = "G" + nextNumber;
+                }
+
+                Guest newGuest = new Guest(guestId, name, checkInD, numOfN);
+                guests.Add(newGuest);
+
+                Console.WriteLine("Guest registered successfully");
+                Console.WriteLine("Guest ID: " + guestId + " | Name: " + name + " | Check-in: " + checkInD + " | Nights: " + numOfN);
+            }
+
+
         }
+
+        
     }
 }
