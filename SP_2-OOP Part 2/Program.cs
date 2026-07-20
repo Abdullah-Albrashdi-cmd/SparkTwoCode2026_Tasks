@@ -117,7 +117,7 @@
                     //case "10": RoomTypeBreakdown(rooms); break;
                     case "11": CheckOutGuest(guests, rooms); break;
                     //case "12": RemoveUnavailableRooms(rooms, guests); break;
-                    //case "13": ExtendGuestStay(guests, rooms); break;
+                    case "13": ExtendGuestStay(guests, rooms); break;
                     //case "14": HighestRevenueBooking(guests, rooms); break;
                     //case "15": GuestPagination(guests); break;
                     case "0": running = false; Console.WriteLine("Thankyou"); break;
@@ -468,6 +468,50 @@
                 Console.WriteLine("Room " + room.roomNumber + " is now available: " + roomIsNowAvailable);
             }
 
+            //Case 13 Extend Guest Stay
+            static void ExtendGuestStay(List<Guest> guests, List<Room> rooms)
+            {
+                Console.Write("Enter guest ID: ");
+                string guestId = Console.ReadLine();
+
+                Guest guest = guests.FirstOrDefault(g => g.guestId == guestId);
+                if (guest == null)
+                {
+                    Console.WriteLine("Error: Guest notfound");
+                    return;
+                }
+
+                if (guest.roomNumber == "Not assigned")
+                {
+                    Console.WriteLine("This guest has no active booking to extend.");
+                    return;
+                }
+
+                Console.Write("Enter additional nights: ");
+                string nightsInput = Console.ReadLine();
+                int additionalNights;
+                bool validNights = int.TryParse(nightsInput, out additionalNights) && additionalNights > 0;
+
+                if (!validNights)
+                {
+                    Console.WriteLine("Error: invalid number of nights");
+                    return;
+                }
+
+                guest.totalNights = guest.totalNights + additionalNights;
+
+                Room matchedRoom = rooms.FirstOrDefault(r => r.roomNumber.ToString() == guest.roomNumber);
+                double price = 0.0;
+                if (matchedRoom != null)
+                {
+                    price = matchedRoom.pricePerNight;
+                }
+                double newCost = guest.calculateTotalCost(price);
+
+                Console.WriteLine("Stay extended successfully");
+                Console.WriteLine("Updated total nights: " + guest.totalNights);
+                Console.WriteLine("New total cost: OMR " + newCost);
+            }
 
 
 
