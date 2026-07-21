@@ -1,3 +1,8 @@
 <Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="Database-Task1/Airline Information System.png" />
+    <File Path="Database-Task1/College Management System.jpeg" />
+    <File Path="Database-Task1/Company Database.jpeg" />
+  </Folder>
   <Project Path="SP_3-Task 1/SP_3-Task 1.csproj" Id="f637aa16-1004-4f2b-bdff-526f0eee3079" />
 </Solution>
