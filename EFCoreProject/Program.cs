@@ -26,8 +26,12 @@ namespace EFCoreProject
 
                 Employee e1 = new Employee();
 
-                Console.WriteLine("Enter name: ");
-                e1.EmployeeName = Console.ReadLine();
+                Console.WriteLine("Enter First name: ");
+                e1.EmployeeFname = Console.ReadLine();
+                Console.WriteLine("Enter Minit: ");
+                e1.EmployeeMinit = Console.ReadLine();
+                Console.WriteLine("Enter Last Name: ");
+                e1.EmployeeLname = Console.ReadLine();
 
                 Console.WriteLine("Enter age: ");
                 e1.EmployeeAge = int.Parse(Console.ReadLine());
@@ -56,7 +60,7 @@ namespace EFCoreProject
                     context.employees.Remove(employee);
                     context.SaveChanges();
                 }
-            }//end comtext
+            }//end context
 
         }
     }
