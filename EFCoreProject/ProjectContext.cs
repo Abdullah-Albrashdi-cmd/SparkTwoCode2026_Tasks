@@ -11,6 +11,10 @@ namespace EFCoreProject
         //1- register models
         public DbSet<Employee> employees {  get; set; }
         public DbSet<Department> department { get; set; }
+        public DbSet<Project> project { get; set;  }
+        public DbSet<Dependent> dependent { get; set; }
+        public DbSet<Works_ON> works_on { get; set; }
+
 
 
 
