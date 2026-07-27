@@ -9,8 +9,12 @@
     <File Path="Database-Task2/college managment sys.jpg" />
     <File Path="Database-Task2/Company Database.jpg" />
     <File Path="Database-Task3/CompanyDB.sql" />
+    <File Path="E-CommerceDatabase/ERD &amp; Mapping/ERD-E-Commerce Database.jpeg" />
+    <File Path="E-CommerceDatabase/ERD &amp; Mapping/ERD-E-Commerce Database.jpg" />
+    <File Path="E-CommerceDatabase/ERD &amp; Mapping/Mapping-E-Commerce Database.jpg" />
   </Folder>
   <Project Path="C# Fundamentals - Mini Compound Project/C# Fundamentals - Mini Compound Project.csproj" Id="ada51153-170e-4593-96ab-fc71f3fe05e4" />
+  <Project Path="E-CommerceDatabase/E-CommerceDatabase.csproj" Id="f3437ed5-3f82-4f12-8c30-3286567bb549" />
   <Project Path="EFCoreProject/EFCoreProject.csproj" Id="ce94a712-92be-4af7-9402-9971d5c13214" />
   <Project Path="Practice Task C# Fundamentals Part 2/Practice Task C# Fundamentals Part 2.csproj" Id="72baf3ac-9cda-4edc-bca6-5d2cd3a3cb15" />
   <Project Path="SP-1-Session 4-Practice-Task/SP-1-Session 4-Practice-Task.csproj" Id="ee4bebf6-dba8-4b65-a037-4684ba0b07a1" />
