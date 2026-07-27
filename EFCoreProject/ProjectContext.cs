@@ -13,7 +13,8 @@ namespace EFCoreProject
         public DbSet<Department> department { get; set; }
         public DbSet<Project> project { get; set;  }
         public DbSet<Dependent> dependent { get; set; }
-        public DbSet<Works_ON> works_on { get; set; }
+        public DbSet<DeptLocation> deptLocations { get; set; }
+        public DbSet<WorksOnEmpProj> worksOnEmpProjs { get; set; }
 
 
 
