@@ -1,4 +1,10 @@
-﻿namespace E_CommerceDatabase
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using E_CommerceDatabase.Models;
+using Microsoft.EntityFrameworkCore;
+
+namespace E_CommerceDatabase
 {
     internal class Program
     {
@@ -69,6 +75,34 @@
         static void RegisterUser()
         {
             // TODO: implement (see Part 3 requirements)
+            Console.Write("Enter your name: ");
+            string name = Console.ReadLine();
+
+            Console.Write("Enter your email: ");
+            string email = Console.ReadLine();
+
+            bool emailTaken = context.Users.Any(u => u.Email == email);
+            if (emailTaken)
+            {
+                Console.WriteLine("An account with this email already exists.");
+                return;
+            }
+
+            Console.Write("Enter your password: ");
+            string password = Console.ReadLine();
+
+            User newUser = new User
+            {
+                Name = name,
+                Email = email,
+                Password = password
+            };
+
+            context.Users.Add(newUser);
+            context.SaveChanges();
+
+            Console.WriteLine("Registration successful Your User ID is " + newUser.UserId );
+        
         }
         static void Login()
         {
