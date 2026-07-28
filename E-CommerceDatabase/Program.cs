@@ -253,6 +253,12 @@ namespace E_CommerceDatabase
         static void PlaceOrder()
         {
             // TODO: implement - check loggedInUserId != 0 first
+            if (loggedInUserId == 0)
+            {
+                Console.WriteLine("You must be logged in to place an order");
+                return;
+            }
+
             List<Product> products = context.Products.ToList();
 
             Console.WriteLine("-Available Products-");
@@ -346,6 +352,25 @@ namespace E_CommerceDatabase
         static void ViewMyOrders()
         {
             // TODO: implement - check loggedInUserId != 0 first
+            if (loggedInUserId == 0)
+            {
+                Console.WriteLine("You must be logged in to view your orders");
+                return;
+            }
+ 
+            List<Order> myOrders = context.Orders.Where(o => o.UserId == loggedInUserId).ToList();
+ 
+            if (myOrders.Count == 0)
+            {
+                Console.WriteLine("You have no orders yet");
+                return;
+            }
+ 
+            Console.WriteLine("-My Orders-");
+            foreach (Order o in myOrders)
+            {
+                Console.WriteLine("Order " + o.OrderId + " placed on " + o.OrderDate);
+            }
         }
         static void ViewOrderDetails()
         {
