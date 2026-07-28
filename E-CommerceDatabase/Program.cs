@@ -507,6 +507,48 @@ namespace E_CommerceDatabase
         static void ViewReviewsForProduct()
         {
             // TODO: implement
+            Console.Write("Enter Product Id: ");
+            int productId;
+            try
+            {
+                productId = int.Parse(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("invalid product id");
+                return;
+            }
+
+            Product product = context.Products.FirstOrDefault(p => p.ProductId == productId);
+            if (product == null)
+            {
+                Console.WriteLine("Product not found.");
+                return;
+            }
+
+            // find every order that included this product (via the OrderProduct join entity)
+            List<int> orderIds = context.OrderProducts.Where(op => op.ProductId == productId).Select(op => op.OrderId).ToList();
+
+            if (orderIds.Count == 0)
+            {
+                Console.WriteLine("This product has not been ordered yet");
+                return;
+            }
+
+            // show the review attached to each of those orders
+            List<Review> reviews = context.Reviews.Where(r => orderIds.Contains(r.OrderId)).ToList();
+
+            if (reviews.Count == 0)
+            {
+                Console.WriteLine("No reviews have been left for this product yet");
+                return;
+            }
+
+            Console.WriteLine("Reviews for " + product.Name );
+            foreach (Review r in reviews)
+            {
+                Console.WriteLine("Order " + r.OrderId + " " + r.Rating + "/5 - " + r.Comment);
+            }
         }
         static void Logout()
         {
