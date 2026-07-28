@@ -432,6 +432,77 @@ namespace E_CommerceDatabase
         static void AddReview()
         {
             // TODO: implement - check loggedInUserId != 0 first
+            if (loggedInUserId == 0)
+            {
+                Console.WriteLine("You must be logged in to add a review");
+                return;
+            }
+
+            Console.Write("Enter order Id to review: ");
+            int orderId;
+            try
+            {
+                orderId = int.Parse(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("invalid order iD");
+                return;
+            }
+
+            Order order = context.Orders.FirstOrDefault(o => o.OrderId == orderId);
+            if (order == null)
+            {
+                Console.WriteLine("order not found");
+                return;
+            }
+
+            if (order.UserId != loggedInUserId)
+            {
+                Console.WriteLine("you can only review your own orders");
+                return;
+            }
+
+            bool reviewExists = context.Reviews.Any(r => r.OrderId == orderId);
+            if (reviewExists)
+            {
+                Console.WriteLine("This order already has a review");
+                return;
+            }
+
+            Console.Write("Enter rating (1-5): ");
+            int rating;
+            try
+            {
+                rating = int.Parse(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("invalid rating");
+                return;
+            }
+
+            if (rating < 1 || rating > 5)
+            {
+                Console.WriteLine("rating must be between 1 and 5");
+                return;
+            }
+
+            Console.Write("Enter your comment: ");
+            string comment = Console.ReadLine();
+
+            Review newReview = new Review
+            {
+                OrderId = orderId,
+                Rating = rating,
+                Comment = comment,
+                ReviewDate = DateTime.Today
+            };
+
+            context.Reviews.Add(newReview);
+            context.SaveChanges();
+
+            Console.WriteLine("Review added successfully");
         }
         static void ViewReviewsForProduct()
         {
