@@ -553,6 +553,20 @@ namespace E_CommerceDatabase
         static void Logout()
         {
             // TODO: implement - reset loggedInUserId back to 0
+            if (loggedInUserId == 0)
+            {
+                Console.WriteLine("no user is currently logged in");
+                return;
+            }
+
+            loggedInUserId = 0;
+            Console.WriteLine("Logged out successfully");
+        }
+    }
+}
+ 
+
+
         }
     }
 }
