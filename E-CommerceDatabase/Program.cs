@@ -148,6 +148,64 @@ namespace E_CommerceDatabase
         static void AddProduct()
         {
             // TODO: implement
+            Console.Write("Enter product name: ");
+            string name = Console.ReadLine();
+
+            Console.Write("Enter product price: ");
+            decimal price;
+            try
+            {
+                price = decimal.Parse(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Invalid price");
+                return;
+            }
+
+            Console.Write("Enter product stock quantity: ");
+            int stock;
+            try
+            {
+                stock = int.Parse(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Invalid stock quantity");
+                return;
+            }
+
+            Console.Write("Enter the category ID for this product: ");
+            int categoryId;
+            try
+            {
+                categoryId = int.Parse(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Invalid category id");
+                return;
+            }
+
+            Category selectedCategory = context.Categories.FirstOrDefault(c => c.CategoryId == categoryId);
+            if (selectedCategory == null)
+            {
+                Console.WriteLine("category not found");
+                return;
+            }
+
+            Product newProduct = new Product
+            {
+                Name = name,
+                Price = price,
+                Stock = stock,
+                CategoryId = categoryId
+            };
+
+            context.Products.Add(newProduct);
+            context.SaveChanges();
+
+            Console.WriteLine("Product added with ID " + newProduct.ProductId);
         }
         static void ViewAllProducts()
         {
