@@ -84,7 +84,7 @@ namespace E_CommerceDatabase
             bool emailTaken = context.Users.Any(u => u.Email == email);
             if (emailTaken)
             {
-                Console.WriteLine("An account with this email already exists.");
+                Console.WriteLine("An account with this email already exists");
                 return;
             }
 
@@ -107,6 +107,22 @@ namespace E_CommerceDatabase
         static void Login()
         {
             // TODO: implement - on success, set loggedInUserId = <found user's Id>
+            Console.Write("Enter your email: ");
+            string email = Console.ReadLine();
+
+            Console.Write("Enter your password: ");
+            string password = Console.ReadLine();
+
+            User foundUser = context.Users.FirstOrDefault(u => u.Email == email && u.Password == password);
+
+            if (foundUser == null)
+            {
+                Console.WriteLine("invalid email or password");
+                return;
+            }
+
+            loggedInUserId = foundUser.UserId;
+            Console.WriteLine("Welcome back " + foundUser.Name );
         }
         static void AddCategory()
         {
