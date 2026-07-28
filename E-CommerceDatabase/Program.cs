@@ -375,6 +375,59 @@ namespace E_CommerceDatabase
         static void ViewOrderDetails()
         {
             // TODO: implement
+            Console.Write("Enter Order ID: ");
+            int orderId;
+            try
+            {
+                orderId = int.Parse(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("invalid order id");
+                return;
+            }
+
+            Order order = context.Orders.FirstOrDefault(o => o.OrderId == orderId);
+            if (order == null)
+            {
+                Console.WriteLine("order not found");
+                return;
+            }
+
+            List<OrderProduct> orderProducts = context.OrderProducts.Where(op => op.OrderId == orderId).Include(op => op.Product).ToList();
+
+            Console.WriteLine("Order " + order.OrderId + " Details:");
+            Console.WriteLine("Date: " + order.OrderDate);
+
+            decimal total = 0;
+            foreach (OrderProduct op in orderProducts)
+            {
+                string productName = "unknown";
+                decimal productPrice = 0;
+
+                if (op.Product != null)
+                {
+                    productName = op.Product.Name;
+                    productPrice = op.Product.Price;
+                }
+
+                decimal lineTotal = productPrice * op.Quantity;
+                total = total + lineTotal;
+
+                Console.WriteLine(productName + " " + op.Quantity + " $ " + lineTotal);
+            }
+
+            Console.WriteLine("Order Total: $" + total);
+
+            Review review = context.Reviews.FirstOrDefault(r => r.OrderId == orderId);
+            if (review == null)
+            {
+                Console.WriteLine("no review has been left for this order yet");
+            }
+            else
+            {
+                Console.WriteLine("Review: " + review.Rating + "/5  " + review.Comment);
+            }
         }
         static void AddReview()
         {
