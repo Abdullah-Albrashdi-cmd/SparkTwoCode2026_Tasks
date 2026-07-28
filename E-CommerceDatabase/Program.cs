@@ -253,6 +253,95 @@ namespace E_CommerceDatabase
         static void PlaceOrder()
         {
             // TODO: implement - check loggedInUserId != 0 first
+            List<Product> products = context.Products.ToList();
+
+            Console.WriteLine("-Available Products-");
+            foreach (Product p in products)
+            {
+                Console.WriteLine(p.ProductId + ". " + p.Name + " $ " + p.Price + " ( Stock: " + p.Stock + ")");
+            }
+
+            Order newOrder = new Order
+            {
+                UserId = loggedInUserId,
+                OrderDate = DateTime.Now
+            };
+
+            context.Orders.Add(newOrder);
+            context.SaveChanges();
+
+            bool addingProducts = true;
+            bool addedAtLeastOne = false;
+
+            while (addingProducts)
+            {
+                Console.Write("Enter Product ID to add (or 0 to finish): ");
+                int productId;
+                try
+                {
+                    productId = int.Parse(Console.ReadLine());
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("invalid input");
+                    continue;
+                }
+
+                if (productId == 0)
+                {
+                    addingProducts = false;
+                    continue;
+                }
+
+                Product selectedProduct = context.Products.FirstOrDefault(p => p.ProductId == productId);
+                if (selectedProduct == null)
+                {
+                    Console.WriteLine("Product not found");
+                    continue;
+                }
+
+                Console.Write("Enter quantity: ");
+                int quantity;
+                try
+                {
+                    quantity = int.Parse(Console.ReadLine());
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("invalid quantity");
+                    continue;
+                }
+
+                if (quantity <= 0)
+                {
+                    Console.WriteLine("quantity must be greater than zer");
+                    continue;
+                }
+
+                OrderProduct newOrderProduct = new OrderProduct
+                {
+                    OrderId = newOrder.OrderId,
+                    ProductId = productId,
+                    Quantity = quantity
+                };
+
+                context.OrderProducts.Add(newOrderProduct);
+                context.SaveChanges();
+
+                addedAtLeastOne = true;
+                Console.WriteLine("Added " + quantity +" " + selectedProduct.Name + " to the order");
+            }
+
+            if (!addedAtLeastOne)
+            {
+                context.Orders.Remove(newOrder);
+                context.SaveChanges();
+                Console.WriteLine("No products were added order cancelled");
+                return;
+            }
+
+            Console.WriteLine("Order " + newOrder.OrderId + " placed successfully");
+        
         }
         static void ViewMyOrders()
         {
