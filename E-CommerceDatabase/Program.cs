@@ -210,6 +210,45 @@ namespace E_CommerceDatabase
         static void ViewAllProducts()
         {
             // TODO: implement
+            Console.Write("Filter by Category ID: ");
+            string input = Console.ReadLine();
+
+            List<Product> products = context.Products.Include(p => p.Category).ToList();
+
+            if (!string.IsNullOrWhiteSpace(input))
+            {
+                int categoryId;
+                try
+                {
+                    categoryId = int.Parse(input);
+                    products = products.Where(p => p.CategoryId == categoryId).ToList();
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Invalid category ID entered");
+                }
+            }
+
+            if (products.Count == 0)
+            {
+                Console.WriteLine("No products found");
+                return;
+            }
+
+            Console.WriteLine("-Products-");
+            foreach (Product p in products)
+            {
+                string categoryName;
+                if (p.Category == null)
+                {
+                    categoryName = "unknown";
+                }
+                else
+                {
+                    categoryName = p.Category.CategoryName;
+                }
+                Console.WriteLine(p.ProductId + p.Name + " $ " + p.Price + " Category: " + categoryName + " Stock: " + p.Stock);
+            }
         }
         static void PlaceOrder()
         {
